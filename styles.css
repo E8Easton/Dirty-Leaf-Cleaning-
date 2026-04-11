@@ -235,7 +235,15 @@ ul {
 .navbar-logo img {
   height: 38px;
   width: auto;
-  border-radius: 10px;
+  border-radius: 0;
+}
+
+.navbar-logo-text {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: -0.01em;
 }
 
 .navbar-links {
@@ -1774,9 +1782,24 @@ ul {
   margin-bottom: 60px;
 }
 
-.footer-brand img {
-  height: 48px;
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   margin-bottom: 20px;
+}
+
+.footer-logo img {
+  height: 48px;
+  width: auto;
+}
+
+.footer-logo-name {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: -0.01em;
 }
 
 .footer-brand p {
