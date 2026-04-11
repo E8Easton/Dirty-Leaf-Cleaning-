@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exterior Window Cleaning | Leaf Cleaning — Kearney & Lincoln, NE</title>
+  <meta name="description" content="Professional exterior window cleaning in Kearney and Lincoln, Nebraska. Streak-free results backed by our 7-day rain guarantee and LEAF Rainblock Technology.">
+  <link rel="icon" type="image/png" href="images/logo-icon-light.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="navbar-logo">
+      <img src="images/logo-full.png" alt="Leaf Cleaning Logo">
+    </a>
+    <div class="navbar-links">
+      <a href="tel:4023090128" class="navbar-cta">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        Call Us
+      </a>
+      <a href="index.html#why-us">About Us</a>
+      <div class="nav-dropdown">
+        <a href="index.html#services" class="nav-dropdown-toggle">
+          Our Services
+          <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+        </a>
+        <div class="nav-dropdown-menu">
+          <a href="service-exterior.html" class="active">Exterior Window Cleaning</a>
+          <a href="service-interior.html">Interior Window Cleaning</a>
+          <a href="service-gutter.html">Gutter Cleaning</a>
+          <a href="service-powerwash.html">Powerwashing</a>
+        </div>
+      </div>
+      <a href="index.html#testimonials">Reviews</a>
+      <a href="index.html#booking">Commercial Cleaning</a>
+    </div>
+    <div class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="tel:4023090128" class="mobile-cta">📞 Call Us</a>
+    <a href="index.html#why-us">About Us</a>
+    <a href="index.html#services">Our Services</a>
+    <a href="index.html#testimonials">Reviews</a>
+    <a href="index.html#booking">Commercial Cleaning</a>
+    <button onclick="openQuoteWizard('exterior-windows')" class="mobile-cta" style="background:var(--white);color:var(--leaf-navy);border:none;cursor:pointer;font-family:var(--font-heading);font-size:1.2rem;font-weight:700;padding:16px 40px;border-radius:var(--radius-full);">Get Free Quote</button>
+  </div>
+
+  <!-- PAGE HERO -->
+  <div class="page-header">
+    <div class="page-header-bg">
+      <img src="images/service-exterior.jpg" alt="Exterior window cleaning">
+    </div>
+    <div class="container">
+      <div class="page-header-badge">Our Services</div>
+      <h1>Exterior Window Cleaning</h1>
+      <p>Crystal-clear windows that transform how your home looks from the outside — backed by our exclusive 7-Day Rain Guarantee.</p>
+      <button class="btn-primary" style="margin-top:28px;" onclick="openQuoteWizard('exterior-windows')">
+        Get Your Quote
+        <svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- SERVICE INFO -->
+  <section class="service-info-section">
+    <div class="container">
+      <div class="service-info-inner reveal">
+        <h2>Exterior Window Cleaning at Leaf Cleaning</h2>
+        <p>At Leaf Cleaning, we specialize in Exterior Window Cleaning, ensuring your windows shine with crystal-clear perfection every time. Our expert service not only enhances the outside appearance of your property but also prolongs the lifespan of your windows by preventing dirt and grime buildup that can etch into the glass over time.</p>
+        <p>We use a pure water-fed pole system combined with our proprietary <strong>LEAF RainBlock Technology</strong> — a hydrophobic coating applied after every clean that causes water to bead and roll off instead of forming streaks. That means your windows stay cleaner, longer, and are protected between every visit.</p>
+        <p>To complement our meticulous cleaning process, Leaf Cleaning offers flexible recurring window cleaning services. These memberships are designed to keep your windows consistently pristine without the hassle of scheduling regular appointments. Our clients enjoy sparkling windows all year round.</p>
+
+        <h3>Why Choose Leaf Cleaning?</h3>
+        <ul class="service-info-list">
+          <li><strong>Experienced Professionals</strong> — Our team is comprised of highly trained technicians, experts in providing the best window care in Kearney and Lincoln, NE.</li>
+          <li><strong>7-Day Rain Guarantee</strong> — If it rains within 7 days of your clean, we come back at no charge. Period.</li>
+          <li><strong>LEAF RainBlock Technology</strong> — Our exclusive hydrophobic coating keeps your windows cleaner 3x longer than traditional methods.</li>
+          <li><strong>100% Satisfaction Guaranteed</strong> — We stand by the quality of our work. If you're not satisfied, we'll make it right.</li>
+        </ul>
+
+        <h3>Locations We Serve</h3>
+        <div class="service-info-locations">
+          <span class="service-info-location-tag">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Kearney, Nebraska
+          </span>
+          <span class="service-info-location-tag">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Lincoln, Nebraska
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SAVE BIG / PRICING -->
+  <div class="service-page-pricing">
+    <section class="pricing-section" id="pricing">
+      <div class="container">
+        <div class="section-title reveal">
+          <h2>SAVE BIG</h2>
+          <p class="subtitle">With Our LEAF Memberships — exclusive discounts on every clean</p>
+        </div>
+        <div class="pricing-grid stagger-children reveal">
+          <div class="pricing-card">
+            <div class="pricing-plan-label">Monthly</div>
+            <div class="pricing-savings-block">
+              <div class="pricing-savings-amount">$150 <span>OFF</span></div>
+              <div class="pricing-savings-per">per cleaning</div>
+            </div>
+            <p class="pricing-desc">12 visits per year — always clean, always fresh.</p>
+            <ul class="pricing-features">
+              <li class="feat-yes">FREE LEAF RainBlock Tech</li>
+              <li class="feat-yes">7 Day Rain Guarantee</li>
+              <li class="feat-yes">FREE Hard Water Removal</li>
+            </ul>
+            <button class="pricing-cta" onclick="openQuoteWizard(null, 'Monthly')">Get Your Quote <svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></button>
+          </div>
+          <div class="pricing-card featured">
+            <div class="pricing-badge">Most Popular</div>
+            <div class="pricing-plan-label">Quarterly</div>
+            <div class="pricing-savings-block">
+              <div class="pricing-savings-amount">$100 <span>OFF</span></div>
+              <div class="pricing-savings-per">per cleaning</div>
+            </div>
+            <p class="pricing-desc">4 cleanings per year — the perfect balance of value and care.</p>
+            <ul class="pricing-features">
+              <li class="feat-yes">FREE LEAF RainBlock Tech</li>
+              <li class="feat-yes">7 Day Rain Guarantee</li>
+              <li class="feat-yes">FREE Hard Water Removal</li>
+            </ul>
+            <button class="pricing-cta" onclick="openQuoteWizard(null, 'Quarterly')">Get Your Quote <svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></button>
+          </div>
+          <div class="pricing-card">
+            <div class="pricing-plan-label">Bi-Annual</div>
+            <div class="pricing-savings-block">
+              <div class="pricing-savings-amount">$50 <span>OFF</span></div>
+              <div class="pricing-savings-per">per cleaning</div>
+            </div>
+            <p class="pricing-desc">Spring &amp; Fall deep cleans — the full seasonal package.</p>
+            <ul class="pricing-features">
+              <li class="feat-no">LEAF RainBlock Tech</li>
+              <li class="feat-no">7 Day Rain Guarantee</li>
+              <li class="feat-no">Hard Water Removal</li>
+            </ul>
+            <button class="pricing-cta" onclick="openQuoteWizard(null, 'Bi-Annual')">Get Your Quote <svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></button>
+          </div>
+        </div>
+        <p class="pricing-note reveal">All plans include our 100% satisfaction guarantee. Custom commercial pricing available — <a href="tel:4023090128">(402) 309-0128</a>.</p>
+      </div>
+    </section>
+  </div>
+
+
+  <!-- WHAT NEIGHBORS ARE SAYING -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-title reveal">
+        <div class="testimonials-header">
+          <div class="testimonials-rating">
+            <div class="stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <span>5.0</span>
+          </div>
+        </div>
+        <h2>What Neighbors Are Saying</h2>
+        <p class="subtitle">Real reviews from happy homeowners in Kearney &amp; Lincoln</p>
+      </div>
+      <div class="reviews-grid stagger-children reveal">
+        <div class="review-card"><div class="review-header"><div class="review-avatar">JM</div><div class="review-info"><h4>Jessica M.</h4><span>Kearney, NE</span></div></div><div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><p>Leaf Cleaning did an incredible job on our windows! They were professional, on time, and left every single window spotless. Our home looks brand new — I can't stop staring at the views!</p></div>
+        <div class="review-card"><div class="review-header"><div class="review-avatar">DK</div><div class="review-info"><h4>David K.</h4><span>Lincoln, NE</span></div></div><div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><p>Had them come out for gutter cleaning and powerwashing. They went above and beyond — even pointed out some issues I hadn't noticed. Very trustworthy and thorough. Will definitely be using them again!</p></div>
+        <div class="review-card"><div class="review-header"><div class="review-avatar">SL</div><div class="review-info"><h4>Sarah L.</h4><span>Kearney, NE</span></div></div><div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><p>The best window cleaning service in Kearney, hands down! They cleaned both interior and exterior windows and the difference is night and day. Super friendly team and very reasonable prices.</p></div>
+        <div class="review-card"><div class="review-header"><div class="review-avatar">MB</div><div class="review-info"><h4>Mark B.</h4><span>Lincoln, NE</span></div></div><div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><p>Our driveway and patio look incredible after their powerwashing service. It's like we got a brand new driveway! The team was efficient, polite, and careful around our landscaping. 10/10 recommend.</p></div>
+        <div class="review-card"><div class="review-header"><div class="review-avatar">AT</div><div class="review-info"><h4>Amanda T.</h4><span>Kearney, NE</span></div></div><div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><p>We had our gutters cleaned before fall and couldn't be happier. The crew was fast and thorough — they even sent before and after photos. Great communication from start to finish!</p></div>
+        <div class="review-card"><div class="review-header"><div class="review-avatar">RH</div><div class="review-info"><h4>Ryan H.</h4><span>Lincoln, NE</span></div></div><div class="review-stars"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><p>Hired Leaf for a full exterior window clean and powerwash on our two-story house. They brought all the right equipment and made our home look amazing. Booking was super easy through their online system too!</p></div>
+      </div>
+      <div class="reviews-nav">
+        <button id="reviews-prev" aria-label="Previous review"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></button>
+        <button id="reviews-next" aria-label="Next review"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></button>
+      </div>
+      <div class="share-review-wrap reveal">
+        <p>Loved your experience with Leaf Cleaning? Share it on Google!</p>
+        <a href="https://www.google.com/search?q=Leaf+Cleaning+Kearney+NE+reviews" target="_blank" class="share-review-btn">⭐ Leave a Review on Google</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 4-STEP PROCESS -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="section-title reveal">
+        <h2>Our Exterior Cleaning Process</h2>
+        <p class="subtitle">Four precision steps to spotless, long-lasting results</p>
+      </div>
+      <div class="process-steps reveal">
+        <div class="process-step">
+          <div class="process-step-bubble">
+            <span class="process-step-num">1</span>
+            <div class="process-step-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12s1.5-3 4-3 4 3 4 3-1.5 3-4 3-4-3-4-3z"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>
+            </div>
+          </div>
+          <div class="process-step-connector" aria-hidden="true"></div>
+          <div class="process-step-content">
+            <h3>Scrub</h3>
+            <p>We meticulously scrub every window with eco-friendly solutions to loosen and remove surface dirt, pollen, and grime.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-bubble">
+            <span class="process-step-num">2</span>
+            <div class="process-step-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
+            </div>
+          </div>
+          <div class="process-step-connector" aria-hidden="true"></div>
+          <div class="process-step-content">
+            <h3>Squeegee</h3>
+            <p>Industry-grade squeegees carefully remove all residue for a perfectly streak-free finish that looks immaculate.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-bubble">
+            <span class="process-step-num">3</span>
+            <div class="process-step-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+            </div>
+          </div>
+          <div class="process-step-connector" aria-hidden="true"></div>
+          <div class="process-step-content">
+            <h3>Detail</h3>
+            <p>We hand-detail every edge, corner, frame, and sill so no spot is missed and the entire window area looks flawless.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-step-bubble">
+            <span class="process-step-num">4</span>
+            <div class="process-step-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/></svg>
+            </div>
+          </div>
+          <div class="process-step-content">
+            <h3>LEAF RainBlock Applied</h3>
+            <p>Our exclusive hydrophobic coating is applied last, creating a protective barrier that repels rain and prevents streaks for weeks.</p>
+          </div>
+        </div>
+      </div>
+      <div class="process-cta reveal">
+        <button class="btn-primary" onclick="openQuoteWizard('exterior-windows')">
+          Get Your Quote
+          <svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FAQ -->
+  <section class="service-faq-section">
+    <div class="container">
+      <div class="section-title reveal">
+        <h2>Frequently Asked Questions</h2>
+        <p class="subtitle">Everything you need to know about exterior window cleaning</p>
+      </div>
+      <div class="faq-list reveal">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-number">01</span>
+            <h4>How often should I have my exterior windows cleaned?</h4>
+            <svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-answer"><p>Most homeowners benefit from exterior window cleaning 2–4 times per year. Our Quarterly plan is the most popular — it aligns with Nebraska's seasonal changes and keeps your home looking great year-round. Monthly is ideal for those who want pristine windows at all times.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-number">02</span>
+            <h4>Do you use eco-friendly cleaning products?</h4>
+            <svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-answer"><p>Yes! We use biodegradable, eco-friendly cleaning solutions that are safe for your family, pets, and landscaping. Our pure water-fed pole system uses purified water that leaves zero residue and no harmful chemicals.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-number">03</span>
+            <h4>What happens if it rains after my cleaning?</h4>
+            <svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-answer"><p>That's what our 7-Day Rain Guarantee is for! If it rains within 7 days of your clean and leaves spots on your windows, we'll come back and re-clean them at absolutely no charge. Our LEAF RainBlock coating also helps water bead off rather than leaving streaks.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-number">04</span>
+            <h4>Do I need to be home during the exterior cleaning?</h4>
+            <svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-answer"><p>Nope! For exterior-only cleaning, you don't need to be present. We'll notify you when we arrive and when we're done, and we'll send before &amp; after photos directly to your phone or email.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-number">05</span>
+            <h4>What areas do you serve?</h4>
+            <svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="faq-answer"><p>Leaf Cleaning proudly serves Kearney, Nebraska and Lincoln, Nebraska, including surrounding communities in both areas. Not sure if we serve your address? Give us a call at (402) 309-0128 and we'll let you know right away.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FINAL CTA -->
+  <section class="service-final-cta">
+    <div class="container">
+      <div class="cta-content reveal-scale">
+        <h2>Transform Your Home's Curb Appeal Today</h2>
+        <span class="subtitle">Join LEAF's Legacy of Sparkling Windows. Sign Up Now!</span>
+        <div class="service-final-cta-btns">
+          <a href="tel:4023090128" class="btn-dark">
+            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="white"/></svg>
+            Call Us Now — (402) 309-0128
+          </a>
+          <button class="btn-outline-dark" onclick="openQuoteWizard('exterior-windows')">Get a Free Quote</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <img src="images/logo-full.png" alt="Leaf Cleaning">
+          <p>Professional window cleaning, gutter cleaning, and powerwashing services in Kearney and Lincoln, Nebraska. Your home deserves the best.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/people/Leaf-Cleaning/61573298251243/" target="_blank" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/leafcleaning/" target="_blank" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="service-exterior.html">Exterior Window Cleaning</a></li>
+            <li><a href="service-interior.html">Interior Window Cleaning</a></li>
+            <li><a href="service-gutter.html">Gutter Cleaning</a></li>
+            <li><a href="service-powerwash.html">Powerwashing</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#why-us">About Us</a></li>
+            <li><a href="index.html#testimonials">Reviews</a></li>
+            <li><a href="javascript:void(0)" onclick="openQuoteWizard()">Get a Quote</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <ul class="footer-contact">
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <a href="tel:4023090128">(402) 309-0128</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              Kearney & Lincoln, NE
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Leaf Cleaning. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE STICKY CTA -->
+  <div class="mobile-sticky-cta" id="mobile-sticky-cta">
+    <a href="tel:4023090128">
+      <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+      Call Us — (402) 309-0128
+    </a>
+  </div>
+
+  <!-- QUOTE WIZARD MODAL -->
+  <div class="wizard-overlay" id="wizard-overlay" role="dialog" aria-modal="true" aria-label="Get a Free Quote">
+    <div class="wizard-modal">
+      <div class="wizard-header">
+        <div class="wizard-progress">
+          <div class="wizard-step-dots">
+            <span class="step-dot active" data-step="1"></span>
+            <div class="step-connector"></div>
+            <span class="step-dot" data-step="2"></span>
+            <div class="step-connector"></div>
+            <span class="step-dot" data-step="3"></span>
+            <div class="step-connector"></div>
+            <span class="step-dot" data-step="4"></span>
+            <div class="step-connector"></div>
+            <span class="step-dot" data-step="5"></span>
+            <div class="step-connector"></div>
+            <span class="step-dot" data-step="6"></span>
+          </div>
+          <span class="wizard-step-label" id="wizard-step-label">Step 1 of 6</span>
+        </div>
+        <button class="wizard-close" id="wizard-close" aria-label="Close quote wizard">
+          <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg>
+        </button>
+      </div>
+      <div class="wizard-body" id="wizard-step-1">
+        <h3 class="wizard-title">Where are you located?</h3>
+        <p class="wizard-subtitle">We serve two great communities in Nebraska.</p>
+        <div class="wizard-location-grid">
+          <label class="location-card" data-location="kearney"><input type="radio" name="location" value="kearney"><div class="location-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div><div class="location-card-name">Kearney</div><div class="location-card-sub">Kearney, NE</div><div class="location-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div></label>
+          <label class="location-card" data-location="lincoln"><input type="radio" name="location" value="lincoln"><div class="location-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div><div class="location-card-name">Lincoln</div><div class="location-card-sub">Lincoln, NE</div><div class="location-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div></label>
+        </div>
+        <p class="wizard-error" id="step1-error"></p>
+      </div>
+      <div class="wizard-body" id="wizard-step-2" hidden>
+        <h3 class="wizard-title">Let's get to know you</h3>
+        <p class="wizard-subtitle">We'll use this to send your custom quote.</p>
+        <div class="wizard-form">
+          <div class="wizard-form-row">
+            <div class="wizard-form-group"><label for="contact-first">First Name <span class="req">*</span></label><input type="text" id="contact-first" placeholder="John" autocomplete="given-name"></div>
+            <div class="wizard-form-group"><label for="contact-last">Last Name <span class="req">*</span></label><input type="text" id="contact-last" placeholder="Smith" autocomplete="family-name"></div>
+          </div>
+          <div class="wizard-form-group"><label for="contact-email">Email Address <span class="req">*</span></label><input type="email" id="contact-email" placeholder="john@email.com" autocomplete="email"></div>
+          <div class="wizard-form-group"><label for="contact-phone">Phone Number <span class="req">*</span></label><input type="tel" id="contact-phone" placeholder="(402) 555-0123" autocomplete="tel"></div>
+          <div class="wizard-form-group"><label for="contact-heard">How did you hear about us?</label><select id="contact-heard"><option value="">Select an option</option><option value="google">Google Search</option><option value="facebook">Facebook</option><option value="instagram">Instagram</option><option value="nextdoor">Nextdoor</option><option value="referral">Friend / Family Referral</option><option value="yard-sign">Yard Sign</option><option value="other">Other</option></select></div>
+          <div class="wizard-form-group"><label for="contact-promo">Promo Code <span class="optional">(optional)</span></label><input type="text" id="contact-promo" placeholder="Enter promo code if you have one"></div>
+          <div class="wizard-consents">
+            <label class="consent-row"><input type="checkbox" id="consent-sms-alerts"><span>I agree to receive SMS service alerts &amp; appointment reminders</span></label>
+            <label class="consent-row"><input type="checkbox" id="consent-sms-promo"><span>I agree to receive SMS promotional messages &amp; special offers</span></label>
+            <label class="consent-row"><input type="checkbox" id="consent-marketing"><span>I agree to receive marketing communications from Leaf Cleaning</span></label>
+            <label class="consent-row consent-row--required"><input type="checkbox" id="consent-privacy"><span>I have read and agree to the <a href="#" class="consent-link">Privacy Policy</a> &amp; <a href="#" class="consent-link">Terms of Service</a> <span class="req">*</span></span></label>
+          </div>
+        </div>
+        <p class="wizard-error" id="step2-error"></p>
+      </div>
+      <div class="wizard-body" id="wizard-step-3" hidden>
+        <h3 class="wizard-title">What type of property?</h3>
+        <p class="wizard-subtitle">Select the option that best describes your property.</p>
+        <div class="wizard-property-grid">
+          <label class="property-card" data-property="residential"><input type="radio" name="property-type" value="residential"><div class="property-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div class="property-card-name">Residential</div><div class="property-card-sub">Home, condo, townhouse</div><div class="location-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div></label>
+          <label class="property-card" data-property="commercial"><input type="radio" name="property-type" value="commercial"><div class="property-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="8" y1="12" x2="8" y2="16"/><line x1="16" y1="12" x2="16" y2="16"/></svg></div><div class="property-card-name">Commercial</div><div class="property-card-sub">Business, office, retail</div><div class="location-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div></label>
+        </div>
+        <p class="wizard-error" id="step3-error"></p>
+      </div>
+      <div class="wizard-body" id="wizard-step-4" hidden>
+        <h3 class="wizard-title">What services do you need?</h3>
+        <p class="wizard-subtitle">Select all that apply — we'll tailor your quote.</p>
+        <div class="wizard-service-grid">
+          <label class="service-radio-card" data-service="exterior-windows"><input type="checkbox" name="services" value="exterior-windows"><div class="service-radio-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/></svg></div><span class="service-radio-name">Exterior Window Cleaning</span><div class="service-radio-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div></label>
+          <label class="service-radio-card" data-service="interior-windows"><input type="checkbox" name="services" value="interior-windows"><div class="service-radio-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z M9 22V12h6v10"/></svg></div><span class="service-radio-name">Interior Window Cleaning</span><div class="service-radio-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div></label>
+          <label class="service-radio-card" data-service="gutters"><input type="checkbox" name="services" value="gutters"><div class="service-radio-icon"><svg viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"/></svg></div><span class="service-radio-name">Gutter Cleaning</span><div class="service-radio-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div></label>
+          <label class="service-radio-card" data-service="pressure-washing"><input type="checkbox" name="services" value="pressure-washing"><div class="service-radio-icon"><svg viewBox="0 0 24 24"><path d="M17 6.14l1.41-1.41 1.41 1.41-1.41 1.41L17 6.14zM4 10.5h3v3H4v-3zm9-7.5h3v3h-3V3zM3.55 18.54l1.41 1.41 1.41-1.41-1.41-1.41-1.41 1.41zM14.5 4H11v3h3.5V4zM20 10.5h-3v3h3v-3zm-7 7.5h3v3h-3v-3z"/></svg></div><span class="service-radio-name">Pressure Washing</span><div class="service-radio-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div></label>
+        </div>
+        <p class="wizard-error" id="step4-error"></p>
+      </div>
+      <div class="wizard-body" id="wizard-step-5" hidden>
+        <h3 class="wizard-title">Choose your plan</h3>
+        <p class="wizard-subtitle">Pick the membership that works best for you — or go one-time.</p>
+        <div class="wizard-plan-grid">
+          <label class="plan-card" data-plan="monthly"><input type="radio" name="plan" value="monthly"><div class="plan-card-badge">Most Frequent</div><div class="plan-card-name">Monthly</div><div class="plan-card-savings">$150 <span>OFF</span></div><div class="plan-card-sub">per cleaning</div><div class="location-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div></label>
+          <label class="plan-card plan-card--featured" data-plan="quarterly"><input type="radio" name="plan" value="quarterly"><div class="plan-card-badge">Most Popular</div><div class="plan-card-name">Quarterly</div><div class="plan-card-savings">$100 <span>OFF</span></div><div class="plan-card-sub">per cleaning</div><div class="location-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div></label>
+          <label class="plan-card" data-plan="biannual"><input type="radio" name="plan" value="biannual"><div class="plan-card-badge">Best Value</div><div class="plan-card-name">Bi-Annual</div><div class="plan-card-savings">$50 <span>OFF</span></div><div class="plan-card-sub">per cleaning</div><div class="location-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div></label>
+          <label class="plan-card plan-card--onetime" data-plan="one-time"><input type="radio" name="plan" value="one-time"><div class="plan-card-name">One-Time</div><div class="plan-card-sub">No membership — pay per visit</div><div class="location-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div></label>
+        </div>
+        <p class="wizard-error" id="step5-error"></p>
+      </div>
+      <div class="wizard-body" id="wizard-step-6" hidden>
+        <h3 class="wizard-title">You're almost there!</h3>
+        <p class="wizard-subtitle">Just your property address and we'll build your custom quote.</p>
+        <div class="wizard-form">
+          <div class="wizard-form-group"><label for="prop-street">Street Address <span class="req">*</span></label><input type="text" id="prop-street" placeholder="123 Main St" autocomplete="address-line1"></div>
+          <div class="wizard-form-row">
+            <div class="wizard-form-group"><label for="prop-city">City <span class="req">*</span></label><input type="text" id="prop-city" placeholder="Kearney" autocomplete="address-level2"></div>
+            <div class="wizard-form-group"><label for="prop-zip">Zip Code <span class="req">*</span></label><input type="text" id="prop-zip" placeholder="68847" autocomplete="postal-code" maxlength="10"></div>
+          </div>
+          <div class="wizard-form-group"><label for="prop-notes">Special Notes <span class="optional">(optional)</span></label><textarea id="prop-notes" placeholder="Accessibility concerns, gate codes, specific areas, etc." rows="3"></textarea></div>
+        </div>
+        <p class="wizard-error" id="step6-error"></p>
+      </div>
+      <div class="wizard-body" id="wizard-step-7" hidden>
+        <div class="wizard-confirmation">
+          <div class="wizard-success-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+          <h3 class="wizard-title">You're all set!</h3>
+          <p class="wizard-subtitle">We've received your request and will reach out within 24 hours with a custom quote.</p>
+          <div class="wizard-summary" id="wizard-summary"></div>
+          <p class="wizard-instant-note">Want your quote instantly? Complete it right now on Jobber:</p>
+          <div class="wizard-cta-group">
+            <a href="https://clienthub.getjobber.com/hubs/bde3395f-99e5-42f2-8751-28ef0f1689bd/public/requests/2757240/new" target="_blank" class="btn-primary wizard-jobber-btn">Complete on Jobber<svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></a>
+            <a href="tel:4023090128" class="wizard-call-btn"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>Call Now: (402) 309-0128</a>
+          </div>
+        </div>
+      </div>
+      <div class="wizard-footer" id="wizard-footer">
+        <button class="wizard-btn-back" id="wizard-back" style="display:none;"><svg viewBox="0 0 24 24"><path d="M19 12H5m7-7l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Back</button>
+        <button class="wizard-btn-next" id="wizard-next">Next Step<svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

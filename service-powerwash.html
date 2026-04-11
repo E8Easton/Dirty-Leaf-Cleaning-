@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Powerwashing | Leaf Cleaning — Kearney & Lincoln, NE</title>
+  <meta name="description" content="Professional powerwashing in Kearney and Lincoln, Nebraska. Driveways, patios, siding, decks, and more — restored to like-new condition. Fully insured.">
+  <link rel="icon" type="image/png" href="images/logo-icon-light.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="navbar-logo">
+      <img src="images/logo-full.png" alt="Leaf Cleaning Logo">
+    </a>
+    <div class="navbar-links">
+      <a href="tel:4023090128" class="navbar-cta">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        Call Us
+      </a>
+      <a href="index.html#why-us">About Us</a>
+      <div class="nav-dropdown">
+        <a href="index.html#services" class="nav-dropdown-toggle">
+          Our Services
+          <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+        </a>
+        <div class="nav-dropdown-menu">
+          <a href="service-exterior.html">Exterior Window Cleaning</a>
+          <a href="service-interior.html">Interior Window Cleaning</a>
+          <a href="service-gutter.html">Gutter Cleaning</a>
+          <a href="service-powerwash.html" class="active">Powerwashing</a>
+        </div>
+      </div>
+      <a href="index.html#testimonials">Reviews</a>
+      <a href="index.html#booking">Commercial Cleaning</a>
+    </div>
+    <div class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="tel:4023090128" class="mobile-cta">📞 Call Us</a>
+    <a href="index.html#why-us">About Us</a>
+    <a href="index.html#services">Our Services</a>
+    <a href="index.html#testimonials">Reviews</a>
+    <a href="index.html#booking">Commercial Cleaning</a>
+    <button onclick="openQuoteWizard('pressure-washing')" class="mobile-cta" style="background:var(--white);color:var(--leaf-navy);border:none;cursor:pointer;font-family:var(--font-heading);font-size:1.2rem;font-weight:700;padding:16px 40px;border-radius:var(--radius-full);">Get Free Quote</button>
+  </div>
+
+  <!-- PAGE HERO -->
+  <div class="page-header">
+    <div class="page-header-bg">
+      <img src="images/service-powerwash.jpg" alt="Powerwashing service">
+    </div>
+    <div class="container">
+      <div class="page-header-badge">Our Services</div>
+      <h1>Powerwashing</h1>
+      <p>Years of grime, algae, oil stains, and weather damage removed in a single visit. Your driveway, patio, deck, and siding will look brand new again.</p>
+      <button class="btn-primary" style="margin-top:28px;" onclick="openQuoteWizard('pressure-washing')">
+        Get Your Quote
+        <svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- SERVICE INFO SECTION -->
+  <section class="service-info-section reveal">
+    <div class="container">
+      <div class="service-info-inner">
+        <h2>Powerwashing at Leaf Cleaning</h2>
+        <p>Nebraska weather is tough on exterior surfaces. Between hard winters, spring mud, summer heat, and fall leaves, your driveway, patio, deck, and siding accumulate years of grime that regular cleaning simply can't touch. At Leaf Cleaning, our professional powerwashing service blasts it all away — safely, effectively, and with the care your property deserves.</p>
+        <p>We use professional-grade pressure washing equipment calibrated to the right PSI for each surface. Concrete gets different treatment than wood decking, and painted siding gets a gentle soft wash instead of high pressure. We pre-treat surfaces with eco-friendly degreasers and algaecides, protect your landscaping, and document every job with before-and-after photos sent straight to your phone. When we're done, your property will look like new again.</p>
+        <p>Whether it's a one-time refresh or a recurring plan, Leaf Cleaning's powerwashing team brings consistency, expertise, and pride to every job. We serve homeowners and businesses across Kearney and Lincoln, NE — and we back every visit with our satisfaction guarantee.</p>
+        <ul class="service-info-list">
+          <li>Driveways, patios, decks, siding & fences restored to like-new condition</li>
+          <li>Surface-safe technique — right PSI for every material, soft wash for delicate siding</li>
+          <li>Eco-friendly pre-treatment degreasers and algaecides</li>
+          <li>Before & after photos sent to your phone after every visit</li>
+        </ul>
+        <div style="margin-top:20px;">
+          <span class="service-info-location-tag">📍 Kearney, NE</span>
+          <span class="service-info-location-tag">📍 Lincoln, NE</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAVE BIG PRICING -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">SAVE BIG</h2>
+        <p class="section-subtitle">With our LEAF Memberships</p>
+      </div>
+      <div class="service-page-pricing">
+        <div class="pricing-grid stagger-children">
+          <div class="pricing-card reveal">
+            <div class="pricing-card-header">
+              <span class="pricing-plan-name">Monthly</span>
+              <div class="pricing-amount"><span class="pricing-save">Save $150</span><span class="pricing-per">per cleaning</span></div>
+            </div>
+            <ul class="pricing-features">
+              <li class="feat-yes"><span>FREE LEAF RainBlock Tech</span></li>
+              <li class="feat-yes"><span>7 Day Rain Guarantee</span></li>
+              <li class="feat-yes"><span>FREE Hard Water Removal</span></li>
+            </ul>
+            <button class="btn-primary" style="width:100%;justify-content:center;margin-top:24px;" onclick="openQuoteWizard('pressure-washing')">
+              Get Started
+              <svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+            </button>
+          </div>
+          <div class="pricing-card featured reveal">
+            <div class="pricing-card-badge">Most Popular</div>
+            <div class="pricing-card-header">
+              <span class="pricing-plan-name">Quarterly</span>
+              <div class="pricing-amount"><span class="pricing-save">Save $100</span><span class="pricing-per">per cleaning</span></div>
+            </div>
+            <ul class="pricing-features">
+              <li class="feat-yes"><span>FREE LEAF RainBlock Tech</span></li>
+              <li class="feat-yes"><span>7 Day Rain Guarantee</span></li>
+              <li class="feat-yes"><span>FREE Hard Water Removal</span></li>
+            </ul>
+            <button class="btn-primary" style="width:100%;justify-content:center;margin-top:24px;" onclick="openQuoteWizard('pressure-washing')">
+              Get Started
+              <svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+            </button>
+          </div>
+          <div class="pricing-card reveal">
+            <div class="pricing-card-header">
+              <span class="pricing-plan-name">Bi-Annual</span>
+              <div class="pricing-amount"><span class="pricing-save">Save $50</span><span class="pricing-per">per cleaning</span></div>
+            </div>
+            <ul class="pricing-features">
+              <li class="feat-no"><span>FREE LEAF RainBlock Tech</span></li>
+              <li class="feat-no"><span>7 Day Rain Guarantee</span></li>
+              <li class="feat-no"><span>FREE Hard Water Removal</span></li>
+            </ul>
+            <button class="btn-primary" style="width:100%;justify-content:center;margin-top:24px;" onclick="openQuoteWizard('pressure-washing')">
+              Get Started
+              <svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT NEIGHBORS ARE SAYING -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">What Neighbors Are Saying</h2>
+        <p class="section-subtitle">Real results from real homeowners in Kearney &amp; Lincoln</p>
+      </div>
+      <div class="reviews-grid stagger-children" id="reviews-grid">
+        <div class="review-card reveal">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Our driveway had years of oil stains and algae. One visit from Leaf Cleaning and it looks brand new. Couldn't believe the transformation!"</p>
+          <div class="review-author">
+            <div class="review-avatar">MR</div>
+            <div><strong>Mark R.</strong><span>Kearney, NE</span></div>
+          </div>
+        </div>
+        <div class="review-card reveal">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"They soft washed our vinyl siding and it looks incredible. Removed all the green algae without a single scratch. Very professional team."</p>
+          <div class="review-author">
+            <div class="review-avatar">SJ</div>
+            <div><strong>Sandra J.</strong><span>Lincoln, NE</span></div>
+          </div>
+        </div>
+        <div class="review-card reveal">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"My patio was covered in black mold from years of shade. Leaf Cleaning had it looking spotless in under an hour. I'll be booking every spring for sure."</p>
+          <div class="review-author">
+            <div class="review-avatar">DT</div>
+            <div><strong>David T.</strong><span>Kearney, NE</span></div>
+          </div>
+        </div>
+        <div class="review-card reveal">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"They powerwashed our deck and fence together and the before/after photos were unreal. Quick, thorough, and super friendly. Will definitely use again."</p>
+          <div class="review-author">
+            <div class="review-avatar">LH</div>
+            <div><strong>Lisa H.</strong><span>Lincoln, NE</span></div>
+          </div>
+        </div>
+        <div class="review-card reveal">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"I was skeptical my concrete walkway could ever look clean again. Leaf Cleaning proved me wrong. Absolutely spotless. Scheduling was easy and the crew was on time."</p>
+          <div class="review-author">
+            <div class="review-avatar">BM</div>
+            <div><strong>Brian M.</strong><span>Kearney, NE</span></div>
+          </div>
+        </div>
+        <div class="review-card reveal">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Great service from start to finish. They pre-treated the stains, pressure washed everything, and even cleaned up afterward. Our home's curb appeal is the best on the block now!"</p>
+          <div class="review-author">
+            <div class="review-avatar">KN</div>
+            <div><strong>Karen N.</strong><span>Lincoln, NE</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="reviews-nav">
+        <button class="reviews-prev" id="reviews-prev" aria-label="Previous reviews">
+          <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        </button>
+        <button class="reviews-next" id="reviews-next" aria-label="Next reviews">
+          <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        </button>
+      </div>
+      <div class="share-review-wrap">
+        <p>Loved your experience? Share it on Google!</p>
+        <a href="https://www.google.com/search?q=Leaf+Cleaning+Kearney+NE+reviews" target="_blank" class="share-review-btn">⭐ Leave a Review on Google</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4-STEP PROCESS -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">Our 4-Step Powerwashing Process</h2>
+        <p class="section-subtitle">A systematic approach for maximum results on every surface</p>
+      </div>
+      <div class="process-steps stagger-children">
+        <div class="process-step reveal">
+          <div class="process-step-bubble">
+            <div class="process-step-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            </div>
+            <span class="process-step-number">01</span>
+          </div>
+          <h3>Assess Surface</h3>
+          <p>We evaluate every surface — concrete, wood, siding, or pavers — to determine the right pressure, nozzle, and cleaning solution before we start.</p>
+        </div>
+        <div class="process-step reveal">
+          <div class="process-step-bubble">
+            <div class="process-step-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 1 10 10"/><path d="M2 12a10 10 0 0 0 10 10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <span class="process-step-number">02</span>
+          </div>
+          <h3>Pre-Treat &amp; Soak</h3>
+          <p>We apply eco-friendly degreasers and algaecides to heavily stained areas, allowing them to break down grime and organic growth before washing begins.</p>
+        </div>
+        <div class="process-step reveal">
+          <div class="process-step-bubble">
+            <div class="process-step-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 6.14l1.41-1.41 1.41 1.41-1.41 1.41L17 6.14zM4 10.5h3v3H4v-3zm9-7.5h3v3h-3V3z"/></svg>
+            </div>
+            <span class="process-step-number">03</span>
+          </div>
+          <h3>Pressure Wash</h3>
+          <p>Using calibrated PSI for each surface, we systematically power wash away years of stains, algae, oil, and grime — safely and thoroughly.</p>
+        </div>
+        <div class="process-step reveal">
+          <div class="process-step-bubble">
+            <div class="process-step-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <span class="process-step-number">04</span>
+          </div>
+          <h3>Rinse &amp; Inspect</h3>
+          <p>We do a final rinse and walk-through inspection to ensure every surface meets our standards, then send you before-and-after photos right to your phone.</p>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:48px;" class="reveal">
+        <button class="btn-primary" onclick="openQuoteWizard('pressure-washing')">
+          Get Your Quote
+          <svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="service-faq-section" id="faq">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Everything you need to know about our powerwashing service</p>
+      </div>
+      <div class="faq-list reveal">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-number">01</span>
+            <span>What surfaces can you powerwash?</span>
+            <span class="faq-toggle-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>We powerwash driveways, patios, pool decks, walkways, wood and composite decks, vinyl and brick siding (soft wash), fences, concrete stoops, and more. If you're unsure whether your surface qualifies, just give us a call — we're happy to advise.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-number">02</span>
+            <span>Will powerwashing damage my driveway or siding?</span>
+            <span class="faq-toggle-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Not when done right. Our team adjusts pressure and technique for every material. Delicate siding, painted wood, and older brick receive a soft wash at lower pressure with specialized cleaning solutions — just as effective without the risk of damage.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-number">03</span>
+            <span>How long does a powerwashing job take?</span>
+            <span class="faq-toggle-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Most residential jobs take 1–3 hours depending on the size and number of surfaces. Driveways and patios are often under an hour. Larger properties with multiple surfaces (deck + siding + driveway) may take 2–4 hours. We'll give you an accurate time estimate before we start.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-number">04</span>
+            <span>Should I move outdoor furniture beforehand?</span>
+            <span class="faq-toggle-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes — please move furniture, potted plants, and any loose items off surfaces to be cleaned. If you have large or heavy furniture you can't move, let us know and we'll work around it as best we can. We'll also protect your landscaping during the wash.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-number">05</span>
+            <span>How often should I have my property powerwashed?</span>
+            <span class="faq-toggle-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Most homeowners benefit from 1–2 powerwashing sessions per year. Spring is ideal for removing winter buildup, and fall is great for clearing algae and leaf stains before winter. Properties with heavy shade or moisture may benefit from more frequent cleanings.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="service-final-cta">
+    <div class="container">
+      <div class="reveal-scale">
+        <h2>Transform Your Home's Curb Appeal Today</h2>
+        <p>Join LEAF's Legacy of Sparkling Windows. Sign Up Now!</p>
+        <div class="service-final-cta-btns">
+          <a href="tel:4023090128" class="btn-dark">
+            📞 Call Us Now — (402) 309-0128
+          </a>
+          <button onclick="openQuoteWizard('pressure-washing')" class="btn-outline-dark">Get a Free Quote</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <img src="images/logo-full.png" alt="Leaf Cleaning">
+          <p>Professional window cleaning, gutter cleaning, and powerwashing services in Kearney and Lincoln, Nebraska. Your home deserves the best.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/people/Leaf-Cleaning/61573298251243/" target="_blank" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+            <a href="https://www.instagram.com/leafcleaning/" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-column"><h4>Services</h4><ul><li><a href="service-exterior.html">Exterior Window Cleaning</a></li><li><a href="service-interior.html">Interior Window Cleaning</a></li><li><a href="service-gutter.html">Gutter Cleaning</a></li><li><a href="service-powerwash.html">Powerwashing</a></li></ul></div>
+        <div class="footer-column"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="index.html#why-us">About Us</a></li><li><a href="index.html#testimonials">Reviews</a></li><li><a href="javascript:void(0)" onclick="openQuoteWizard()">Get a Quote</a></li></ul></div>
+        <div class="footer-column"><h4>Contact</h4><ul class="footer-contact"><li><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><a href="tel:4023090128">(402) 309-0128</a></li><li><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Kearney & Lincoln, NE</li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Leaf Cleaning. All rights reserved.</p>
+        <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-sticky-cta" id="mobile-sticky-cta">
+    <a href="tel:4023090128"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>Call Us — (402) 309-0128</a>
+  </div>
+
+  <!-- QUOTE WIZARD MODAL -->
+  <div class="wizard-overlay" id="wizard-overlay" role="dialog" aria-modal="true" aria-label="Get a Free Quote">
+    <div class="wizard-modal">
+      <div class="wizard-header"><div class="wizard-progress"><div class="wizard-step-dots"><span class="step-dot active" data-step="1"></span><div class="step-connector"></div><span class="step-dot" data-step="2"></span><div class="step-connector"></div><span class="step-dot" data-step="3"></span><div class="step-connector"></div><span class="step-dot" data-step="4"></span><div class="step-connector"></div><span class="step-dot" data-step="5"></span><div class="step-connector"></div><span class="step-dot" data-step="6"></span></div><span class="wizard-step-label" id="wizard-step-label">Step 1 of 6</span></div><button class="wizard-close" id="wizard-close" aria-label="Close quote wizard"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg></button></div>
+      <div class="wizard-body" id="wizard-step-1"><h3 class="wizard-title">Where are you located?</h3><p class="wizard-subtitle">We serve two great communities in Nebraska.</p><div class="wizard-location-grid"><label class="location-card" data-location="kearney"><input type="radio" name="location" value="kearney"><div class="location-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div><div class="location-card-name">Kearney</div><div class="location-card-sub">Kearney, NE</div><div class="location-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div></label><label class="location-card" data-location="lincoln"><input type="radio" name="location" value="lincoln"><div class="location-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div><div class="location-card-name">Lincoln</div><div class="location-card-sub">Lincoln, NE</div><div class="location-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div></label></div><p class="wizard-error" id="step1-error"></p></div>
+      <div class="wizard-body" id="wizard-step-2" hidden><h3 class="wizard-title">Let's get to know you</h3><p class="wizard-subtitle">We'll use this to send your custom quote.</p><div class="wizard-form"><div class="wizard-form-row"><div class="wizard-form-group"><label for="contact-first">First Name <span class="req">*</span></label><input type="text" id="contact-first" placeholder="John" autocomplete="given-name"></div><div class="wizard-form-group"><label for="contact-last">Last Name <span class="req">*</span></label><input type="text" id="contact-last" placeholder="Smith" autocomplete="family-name"></div></div><div class="wizard-form-group"><label for="contact-email">Email Address <span class="req">*</span></label><input type="email" id="contact-email" placeholder="john@email.com" autocomplete="email"></div><div class="wizard-form-group"><label for="contact-phone">Phone Number <span class="req">*</span></label><input type="tel" id="contact-phone" placeholder="(402) 555-0123" autocomplete="tel"></div><div class="wizard-form-group"><label for="contact-heard">How did you hear about us?</label><select id="contact-heard"><option value="">Select an option</option><option value="google">Google Search</option><option value="facebook">Facebook</option><option value="instagram">Instagram</option><option value="nextdoor">Nextdoor</option><option value="referral">Friend / Family Referral</option><option value="yard-sign">Yard Sign</option><option value="other">Other</option></select></div><div class="wizard-form-group"><label for="contact-promo">Promo Code <span class="optional">(optional)</span></label><input type="text" id="contact-promo" placeholder="Enter promo code if you have one"></div><div class="wizard-consents"><label class="consent-row"><input type="checkbox" id="consent-sms-alerts"><span>I agree to receive SMS service alerts &amp; appointment reminders</span></label><label class="consent-row"><input type="checkbox" id="consent-sms-promo"><span>I agree to receive SMS promotional messages &amp; special offers</span></label><label class="consent-row"><input type="checkbox" id="consent-marketing"><span>I agree to receive marketing communications from Leaf Cleaning</span></label><label class="consent-row consent-row--required"><input type="checkbox" id="consent-privacy"><span>I have read and agree to the <a href="#" class="consent-link">Privacy Policy</a> &amp; <a href="#" class="consent-link">Terms of Service</a> <span class="req">*</span></span></label></div></div><p class="wizard-error" id="step2-error"></p></div>
+      <div class="wizard-body" id="wizard-step-3" hidden><h3 class="wizard-title">What type of property?</h3><p class="wizard-subtitle">Select the option that best describes your property.</p><div class="wizard-property-grid"><label class="property-card" data-property="residential"><input type="radio" name="property-type" value="residential"><div class="property-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div class="property-card-name">Residential</div><div class="property-card-sub">Home, condo, townhouse</div><div class="location-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div></label><label class="property-card" data-property="commercial"><input type="radio" name="property-type" value="commercial"><div class="property-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="8" y1="12" x2="8" y2="16"/><line x1="16" y1="12" x2="16" y2="16"/></svg></div><div class="property-card-name">Commercial</div><div class="property-card-sub">Business, office, retail</div><div class="location-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div></label></div><p class="wizard-error" id="step3-error"></p></div>
+      <div class="wizard-body" id="wizard-step-4" hidden><h3 class="wizard-title">What services do you need?</h3><p class="wizard-subtitle">Select all that apply — we'll tailor your quote.</p><div class="wizard-service-grid"><label class="service-radio-card" data-service="exterior-windows"><input type="checkbox" name="services" value="exterior-windows"><div class="service-radio-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/></svg></div><span class="service-radio-name">Exterior Window Cleaning</span><div class="service-radio-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div></label><label class="service-radio-card" data-service="interior-windows"><input type="checkbox" name="services" value="interior-windows"><div class="service-radio-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z M9 22V12h6v10"/></svg></div><span class="service-radio-name">Interior Window Cleaning</span><div class="service-radio-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div></label><label class="service-radio-card" data-service="gutters"><input type="checkbox" name="services" value="gutters"><div class="service-radio-icon"><svg viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"/></svg></div><span class="service-radio-name">Gutter Cleaning</span><div class="service-radio-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div></label><label class="service-radio-card" data-service="pressure-washing"><input type="checkbox" name="services" value="pressure-washing"><div class="service-radio-icon"><svg viewBox="0 0 24 24"><path d="M17 6.14l1.41-1.41 1.41 1.41-1.41 1.41L17 6.14zM4 10.5h3v3H4v-3zm9-7.5h3v3h-3V3zM3.55 18.54l1.41 1.41 1.41-1.41-1.41-1.41-1.41 1.41zM14.5 4H11v3h3.5V4zM20 10.5h-3v3h3v-3zm-7 7.5h3v3h-3v-3z"/></svg></div><span class="service-radio-name">Pressure Washing</span><div class="service-radio-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div></label></div><p class="wizard-error" id="step4-error"></p></div>
+      <div class="wizard-body" id="wizard-step-5" hidden><h3 class="wizard-title">Choose your plan</h3><p class="wizard-subtitle">Pick the membership that works best for you — or go one-time.</p><div class="wizard-plan-grid"><label class="plan-card" data-plan="monthly"><input type="radio" name="plan" value="monthly"><div class="plan-card-badge">Most Frequent</div><div class="plan-card-name">Monthly</div><div class="plan-card-savings">$150 <span>OFF</span></div><div class="plan-card-sub">per cleaning</div><div class="location-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div></label><label class="plan-card plan-card--featured" data-plan="quarterly"><input type="radio" name="plan" value="quarterly"><div class="plan-card-badge">Most Popular</div><div class="plan-card-name">Quarterly</div><div class="plan-card-savings">$100 <span>OFF</span></div><div class="plan-card-sub">per cleaning</div><div class="location-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div></label><label class="plan-card" data-plan="biannual"><input type="radio" name="plan" value="biannual"><div class="plan-card-badge">Best Value</div><div class="plan-card-name">Bi-Annual</div><div class="plan-card-savings">$50 <span>OFF</span></div><div class="plan-card-sub">per cleaning</div><div class="location-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div></label><label class="plan-card plan-card--onetime" data-plan="one-time"><input type="radio" name="plan" value="one-time"><div class="plan-card-name">One-Time</div><div class="plan-card-sub">No membership — pay per visit</div><div class="location-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div></label></div><p class="wizard-error" id="step5-error"></p></div>
+      <div class="wizard-body" id="wizard-step-6" hidden><h3 class="wizard-title">You're almost there!</h3><p class="wizard-subtitle">Just your property address and we'll build your custom quote.</p><div class="wizard-form"><div class="wizard-form-group"><label for="prop-street">Street Address <span class="req">*</span></label><input type="text" id="prop-street" placeholder="123 Main St" autocomplete="address-line1"></div><div class="wizard-form-row"><div class="wizard-form-group"><label for="prop-city">City <span class="req">*</span></label><input type="text" id="prop-city" placeholder="Kearney" autocomplete="address-level2"></div><div class="wizard-form-group"><label for="prop-zip">Zip Code <span class="req">*</span></label><input type="text" id="prop-zip" placeholder="68847" autocomplete="postal-code" maxlength="10"></div></div><div class="wizard-form-group"><label for="prop-notes">Special Notes <span class="optional">(optional)</span></label><textarea id="prop-notes" placeholder="Accessibility concerns, gate codes, specific areas, etc." rows="3"></textarea></div></div><p class="wizard-error" id="step6-error"></p></div>
+      <div class="wizard-body" id="wizard-step-7" hidden><div class="wizard-confirmation"><div class="wizard-success-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div><h3 class="wizard-title">You're all set!</h3><p class="wizard-subtitle">We've received your request and will reach out within 24 hours with a custom quote.</p><div class="wizard-summary" id="wizard-summary"></div><p class="wizard-instant-note">Want your quote instantly? Complete it right now on Jobber:</p><div class="wizard-cta-group"><a href="https://clienthub.getjobber.com/hubs/bde3395f-99e5-42f2-8751-28ef0f1689bd/public/requests/2757240/new" target="_blank" class="btn-primary wizard-jobber-btn">Complete on Jobber<svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></a><a href="tel:4023090128" class="wizard-call-btn"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>Call Now: (402) 309-0128</a></div></div></div>
+      <div class="wizard-footer" id="wizard-footer"><button class="wizard-btn-back" id="wizard-back" style="display:none;"><svg viewBox="0 0 24 24"><path d="M19 12H5m7-7l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Back</button><button class="wizard-btn-next" id="wizard-next">Next Step<svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></button></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
