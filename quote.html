@@ -138,104 +138,109 @@
     <div class="qp-step" id="wizard-step-4" hidden>
       <h2 class="qp-title">Select Your Service</h2>
       <p class="qp-subtitle">Pick the service you need a quote for</p>
-      <div class="qp-service-grid">
+      <div class="qp-img-svc-grid" id="svc-img-grid">
 
-        <!-- Row 1: Large featured window services -->
-        <label class="qp-svc-card qp-svc-card--large service-radio-card" data-service="exterior-windows">
-          <input type="radio" name="service" value="exterior-windows">
-          <div class="qp-svc-icon" style="color:#4baee6">
-            <svg viewBox="0 0 60 60" fill="none"><rect x="6" y="6" width="48" height="48" rx="5" stroke="currentColor" stroke-width="3" fill="currentColor" fill-opacity="0.1"/><line x1="30" y1="6" x2="30" y2="54" stroke="currentColor" stroke-width="3"/><line x1="6" y1="30" x2="54" y2="30" stroke="currentColor" stroke-width="3"/></svg>
+        <!-- Large featured: Exterior & Interior -->
+        <div class="qp-img-svc-card qp-img-svc-card--large service-radio-card" data-service="exterior-windows">
+          <div class="qp-img-svc-bg" style="background-image:url('images/svc-exterior.jpg')"></div>
+          <div class="qp-img-svc-overlay"></div>
+          <div class="qp-img-svc-content">
+            <span class="qp-img-svc-name">Exterior Window Cleaning</span>
+            <div class="qp-img-svc-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
           </div>
-          <span class="qp-svc-name">Exterior Window Cleaning</span>
-          <div class="qp-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-        </label>
+        </div>
 
-        <label class="qp-svc-card qp-svc-card--large service-radio-card" data-service="interior-windows">
-          <input type="radio" name="service" value="interior-windows">
-          <div class="qp-svc-icon" style="color:#34d1bf">
-            <svg viewBox="0 0 60 60" fill="none"><rect x="6" y="8" width="48" height="44" rx="5" stroke="currentColor" stroke-width="3" fill="currentColor" fill-opacity="0.1"/><line x1="30" y1="8" x2="30" y2="52" stroke="currentColor" stroke-width="3"/><line x1="6" y1="30" x2="54" y2="30" stroke="currentColor" stroke-width="3"/><path d="M18 18 Q22 14 26 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M34 18 Q38 14 42 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <div class="qp-img-svc-card qp-img-svc-card--large service-radio-card" data-service="interior-windows">
+          <div class="qp-img-svc-bg" style="background-image:url('images/svc-interior.jpg')"></div>
+          <div class="qp-img-svc-overlay"></div>
+          <div class="qp-img-svc-content">
+            <span class="qp-img-svc-name">Interior Window Cleaning</span>
+            <div class="qp-img-svc-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
           </div>
-          <span class="qp-svc-name">Interior Window Cleaning</span>
-          <div class="qp-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-        </label>
+        </div>
 
-        <!-- Row 2: Core services -->
-        <label class="qp-svc-card service-radio-card" data-service="track-detailing">
-          <input type="radio" name="service" value="track-detailing">
-          <div class="qp-svc-icon" style="color:#f97316">
-            <svg viewBox="0 0 60 60" fill="none"><rect x="6" y="20" width="48" height="9" rx="3" stroke="currentColor" stroke-width="3" fill="currentColor" fill-opacity="0.15"/><rect x="6" y="33" width="48" height="9" rx="3" stroke="currentColor" stroke-width="3" fill="currentColor" fill-opacity="0.15"/><circle cx="16" cy="24" r="3" fill="currentColor"/><circle cx="30" cy="24" r="3" fill="currentColor"/><circle cx="44" cy="24" r="3" fill="currentColor"/><circle cx="16" cy="37" r="3" fill="currentColor"/><circle cx="30" cy="37" r="3" fill="currentColor"/><circle cx="44" cy="37" r="3" fill="currentColor"/></svg>
+        <!-- Smaller service cards -->
+        <div class="qp-img-svc-card service-radio-card" data-service="track-detailing">
+          <div class="qp-img-svc-bg" style="background-image:url('images/svc-track.jpg')"></div>
+          <div class="qp-img-svc-overlay"></div>
+          <div class="qp-img-svc-content">
+            <span class="qp-img-svc-name">Track Detailing</span>
+            <div class="qp-img-svc-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
           </div>
-          <span class="qp-svc-name">Track Detailing</span>
-          <div class="qp-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-        </label>
+        </div>
 
-        <label class="qp-svc-card service-radio-card" data-service="gutters">
-          <input type="radio" name="service" value="gutters">
-          <div class="qp-svc-icon" style="color:#1a3a6e">
-            <svg viewBox="0 0 60 60" fill="none"><path d="M4 22 H56 V31 Q56 37 50 37 H10 Q4 37 4 31 V22Z" stroke="currentColor" stroke-width="3" fill="currentColor" fill-opacity="0.12"/><path d="M10 37 L8 52" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M50 37 L52 52" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M18 14 L21 22 M30 10 L30 22 M42 14 L39 22" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <div class="qp-img-svc-card service-radio-card" data-service="gutters">
+          <div class="qp-img-svc-bg" style="background-image:url('images/svc-gutter.jpg')"></div>
+          <div class="qp-img-svc-overlay"></div>
+          <div class="qp-img-svc-content">
+            <span class="qp-img-svc-name">Gutter Cleaning</span>
+            <div class="qp-img-svc-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
           </div>
-          <span class="qp-svc-name">Gutter Cleaning</span>
-          <div class="qp-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-        </label>
+        </div>
 
-        <label class="qp-svc-card service-radio-card" data-service="screen-cleaning">
-          <input type="radio" name="service" value="screen-cleaning">
-          <div class="qp-svc-icon" style="color:#8b5cf6">
-            <svg viewBox="0 0 60 60" fill="none"><rect x="8" y="8" width="44" height="44" rx="4" stroke="currentColor" stroke-width="3" fill="currentColor" fill-opacity="0.08"/><line x1="8" y1="19" x2="52" y2="19" stroke="currentColor" stroke-width="2"/><line x1="8" y1="30" x2="52" y2="30" stroke="currentColor" stroke-width="2"/><line x1="8" y1="41" x2="52" y2="41" stroke="currentColor" stroke-width="2"/><line x1="19" y1="8" x2="19" y2="52" stroke="currentColor" stroke-width="2"/><line x1="30" y1="8" x2="30" y2="52" stroke="currentColor" stroke-width="2"/><line x1="41" y1="8" x2="41" y2="52" stroke="currentColor" stroke-width="2"/></svg>
+        <div class="qp-img-svc-card service-radio-card" data-service="screen-cleaning">
+          <div class="qp-img-svc-bg" style="background-image:url('images/svc-screen.jpg')"></div>
+          <div class="qp-img-svc-overlay"></div>
+          <div class="qp-img-svc-content">
+            <span class="qp-img-svc-name">Screen Cleaning</span>
+            <div class="qp-img-svc-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
           </div>
-          <span class="qp-svc-name">Screen Cleaning</span>
-          <div class="qp-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-        </label>
+        </div>
 
-        <label class="qp-svc-card service-radio-card" data-service="pressure-washing">
-          <input type="radio" name="service" value="pressure-washing">
-          <div class="qp-svc-icon" style="color:#34a864">
-            <!-- Clean pressure washer wand + fan spray -->
-            <svg viewBox="0 0 60 60" fill="none"><line x1="12" y1="48" x2="38" y2="22" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><rect x="34" y="14" width="12" height="12" rx="3" stroke="currentColor" stroke-width="3" fill="currentColor" fill-opacity="0.15" transform="rotate(-45 40 20)"/><line x1="42" y1="14" x2="50" y2="6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="44" y1="18" x2="54" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="44" y1="12" x2="52" y2="4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="50" r="5" stroke="currentColor" stroke-width="3" fill="currentColor" fill-opacity="0.15"/></svg>
+        <div class="qp-img-svc-card service-radio-card" data-service="pressure-washing">
+          <div class="qp-img-svc-bg" style="background-image:url('images/svc-powerwash.jpg')"></div>
+          <div class="qp-img-svc-overlay"></div>
+          <div class="qp-img-svc-content">
+            <span class="qp-img-svc-name">Pressure Washing</span>
+            <div class="qp-img-svc-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
           </div>
-          <span class="qp-svc-name">Pressure Washing</span>
-          <div class="qp-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-        </label>
+        </div>
 
-        <!-- Row 3: Additional services -->
-        <label class="qp-svc-card service-radio-card" data-service="solar-panel">
-          <input type="radio" name="service" value="solar-panel">
-          <div class="qp-svc-icon" style="color:#f59e0b">
-            <svg viewBox="0 0 60 60" fill="none"><rect x="4" y="10" width="24" height="18" rx="3" stroke="currentColor" stroke-width="3" fill="currentColor" fill-opacity="0.15"/><rect x="32" y="10" width="24" height="18" rx="3" stroke="currentColor" stroke-width="3" fill="currentColor" fill-opacity="0.15"/><rect x="4" y="32" width="24" height="18" rx="3" stroke="currentColor" stroke-width="3" fill="currentColor" fill-opacity="0.15"/><rect x="32" y="32" width="24" height="18" rx="3" stroke="currentColor" stroke-width="3" fill="currentColor" fill-opacity="0.15"/><line x1="16" y1="50" x2="16" y2="56" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><line x1="44" y1="50" x2="44" y2="56" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><line x1="10" y1="56" x2="50" y2="56" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+        <div class="qp-img-svc-card service-radio-card" data-service="solar-panel">
+          <div class="qp-img-svc-bg" style="background-image:url('images/svc-solar.jpg')"></div>
+          <div class="qp-img-svc-overlay"></div>
+          <div class="qp-img-svc-content">
+            <span class="qp-img-svc-name">Solar Panel Cleaning</span>
+            <div class="qp-img-svc-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
           </div>
-          <span class="qp-svc-name">Solar Panel Cleaning</span>
-          <div class="qp-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-        </label>
+        </div>
 
-        <label class="qp-svc-card service-radio-card" data-service="soft-washing">
-          <input type="radio" name="service" value="soft-washing">
-          <div class="qp-svc-icon" style="color:#06b6d4">
-            <!-- Person holding a soft-wash wand, gentle spray fan -->
-            <svg viewBox="0 0 60 60" fill="none"><circle cx="20" cy="10" r="6" stroke="currentColor" stroke-width="2.5" fill="currentColor" fill-opacity="0.12"/><line x1="20" y1="16" x2="20" y2="32" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><line x1="12" y1="22" x2="28" y2="22" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><line x1="20" y1="32" x2="14" y2="48" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><line x1="20" y1="32" x2="26" y2="48" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><line x1="28" y1="22" x2="48" y2="18" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M50 16 L56 10 M54 18 L60 14 M52 20 L58 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <div class="qp-img-svc-card service-radio-card" data-service="soft-washing">
+          <div class="qp-img-svc-bg" style="background-image:url('images/svc-softwash.jpg')"></div>
+          <div class="qp-img-svc-overlay"></div>
+          <div class="qp-img-svc-content">
+            <span class="qp-img-svc-name">Soft Washing</span>
+            <div class="qp-img-svc-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
           </div>
-          <span class="qp-svc-name">Soft Washing</span>
-          <div class="qp-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-        </label>
+        </div>
 
-        <label class="qp-svc-card service-radio-card" data-service="christmas-lights">
-          <input type="radio" name="service" value="christmas-lights">
-          <div class="qp-svc-icon" style="color:#ef4444">
-            <svg viewBox="0 0 60 60" fill="none"><path d="M6 22 Q20 15 30 22 Q40 29 54 22" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none"/><circle cx="14" cy="30" r="5" stroke="currentColor" stroke-width="2.5" fill="currentColor" fill-opacity="0.2"/><line x1="14" y1="25" x2="14" y2="22" stroke="currentColor" stroke-width="2"/><circle cx="30" cy="32" r="5" stroke="currentColor" stroke-width="2.5" fill="currentColor" fill-opacity="0.2"/><line x1="30" y1="27" x2="30" y2="22" stroke="currentColor" stroke-width="2"/><circle cx="46" cy="30" r="5" stroke="currentColor" stroke-width="2.5" fill="currentColor" fill-opacity="0.2"/><line x1="46" y1="25" x2="46" y2="22" stroke="currentColor" stroke-width="2"/></svg>
+        <div class="qp-img-svc-card service-radio-card" data-service="christmas-lights">
+          <div class="qp-img-svc-bg" style="background-image:url('images/svc-christmas.jpg')"></div>
+          <div class="qp-img-svc-overlay"></div>
+          <div class="qp-img-svc-content">
+            <span class="qp-img-svc-name">Christmas Lights</span>
+            <div class="qp-img-svc-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
           </div>
-          <span class="qp-svc-name">Christmas Lights</span>
-          <div class="qp-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-        </label>
+        </div>
 
-        <label class="qp-svc-card service-radio-card" data-service="commercial-cleaning">
-          <input type="radio" name="service" value="commercial-cleaning">
-          <div class="qp-svc-icon" style="color:#64748b">
-            <svg viewBox="0 0 60 60" fill="none"><rect x="8" y="18" width="44" height="36" rx="3" stroke="currentColor" stroke-width="3" fill="currentColor" fill-opacity="0.1"/><path d="M20 18 V12 Q20 8 24 8 H36 Q40 8 40 12 V18" stroke="currentColor" stroke-width="3"/><rect x="16" y="28" width="8" height="8" rx="1" stroke="currentColor" stroke-width="2" fill="currentColor" fill-opacity="0.2"/><rect x="30" y="28" width="8" height="8" rx="1" stroke="currentColor" stroke-width="2" fill="currentColor" fill-opacity="0.2"/><rect x="22" y="42" width="16" height="12" rx="2" stroke="currentColor" stroke-width="2" fill="currentColor" fill-opacity="0.15"/></svg>
+        <div class="qp-img-svc-card service-radio-card" data-service="commercial-cleaning">
+          <div class="qp-img-svc-bg" style="background-image:url('images/svc-commercial.jpg')"></div>
+          <div class="qp-img-svc-overlay"></div>
+          <div class="qp-img-svc-content">
+            <span class="qp-img-svc-name">Commercial Cleaning</span>
+            <div class="qp-img-svc-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
           </div>
-          <span class="qp-svc-name">Commercial Cleaning</span>
-          <div class="qp-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-        </label>
+        </div>
 
       </div>
+
+      <!-- Add-ons panel — shown after a service is selected -->
+      <div class="qp-addons-panel" id="addons-panel" hidden>
+        <h3 class="qp-addons-title">Add-On Services</h3>
+        <p class="qp-addons-sub">Popular add-ons to bundle with your service — optional</p>
+        <div class="qp-addons-grid" id="addons-grid"></div>
+      </div>
+
       <p class="qp-error" id="step4-error"></p>
     </div>
 
@@ -339,6 +344,6 @@
 
   </main>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

@@ -15,6 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- Stylesheet -->
+  <link rel="preload" href="images/new-service-2.jpg" as="image">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -24,7 +25,7 @@
        ======================================== -->
   <nav class="navbar" id="navbar">
     <a href="#" class="navbar-logo">
-      <img src="images/logo-icon-new.png" alt="Leaf Cleaning Logo">
+      <img src="images/logo-icon-new.png" alt="Leaf Cleaning Logo" loading="lazy">
       <span class="navbar-logo-text">Leaf Cleaning</span>
     </a>
 
@@ -83,7 +84,7 @@
        ======================================== -->
   <section class="hero" id="hero">
     <div class="hero-bg">
-      <img src="images/new-service-2.jpg" alt="Professional window cleaning service" loading="eager">
+      <img src="images/new-service-2.jpg" alt="Professional window cleaning service" loading="eager" fetchpriority="high">
     </div>
 
     <div class="hero-particles"></div>
@@ -132,61 +133,61 @@
       <div class="services-grid stagger-children reveal">
         <!-- 1: Exterior Window Cleaning (large) -->
         <a class="service-card service-card--large" href="service-exterior.html">
-          <img src="images/service-exterior.jpg" alt="Exterior Window Cleaning">
+          <img src="images/svc-exterior.jpg" alt="Exterior Window Cleaning" loading="lazy">
           <div class="service-card-overlay"><h3>Exterior Window Cleaning</h3></div>
         </a>
 
         <!-- 2: Interior Window Cleaning (large) -->
         <a class="service-card service-card--large" href="service-interior.html">
-          <img src="images/service-interior.jpg" alt="Interior Window Cleaning">
+          <img src="images/svc-interior.jpg" alt="Interior Window Cleaning" loading="lazy">
           <div class="service-card-overlay"><h3>Interior Window Cleaning</h3></div>
         </a>
 
         <!-- 3: Gutter Cleaning -->
         <a class="service-card" href="service-gutter.html">
-          <img src="images/service-gutter.jpg" alt="Gutter Cleaning">
+          <img src="images/svc-gutter.jpg" alt="Gutter Cleaning" loading="lazy">
           <div class="service-card-overlay"><h3>Gutter Cleaning</h3></div>
         </a>
 
         <!-- 4: Powerwashing -->
         <a class="service-card" href="service-powerwash.html">
-          <img src="images/service-powerwash.jpg" alt="Powerwashing">
+          <img src="images/svc-powerwash.jpg" alt="Powerwashing" loading="lazy">
           <div class="service-card-overlay"><h3>Powerwashing</h3></div>
         </a>
 
         <!-- 5: Screen Cleaning -->
         <a class="service-card" href="service-screen.html">
-          <img src="images/new-service-4.jpg" alt="Screen Cleaning">
+          <img src="images/svc-screen.jpg" alt="Screen Cleaning" loading="lazy">
           <div class="service-card-overlay"><h3>Screen Cleaning</h3></div>
         </a>
 
         <!-- 6: Track Detailing -->
         <a class="service-card" href="service-track.html">
-          <img src="images/new-service-3.jpg" alt="Track Detailing">
+          <img src="images/svc-track.jpg" alt="Track Detailing" loading="lazy">
           <div class="service-card-overlay"><h3>Track Detailing</h3></div>
         </a>
 
         <!-- 7: Solar Panel Cleaning -->
         <a class="service-card" href="service-solar.html">
-          <img src="images/why-us-home.jpg" alt="Solar Panel Cleaning">
+          <img src="images/svc-solar.jpg" alt="Solar Panel Cleaning" loading="lazy">
           <div class="service-card-overlay"><h3>Solar Panel Cleaning</h3></div>
         </a>
 
         <!-- 8: Commercial Cleaning -->
         <a class="service-card" href="service-commercial.html">
-          <img src="images/new-service-2.jpg" alt="Commercial Cleaning">
+          <img src="images/svc-commercial.jpg" alt="Commercial Cleaning" loading="lazy">
           <div class="service-card-overlay"><h3>Commercial Cleaning</h3></div>
         </a>
 
         <!-- 9: Christmas Light Installation -->
         <a class="service-card" href="service-christmas.html">
-          <img src="images/hero-bg.png" alt="Christmas Light Installation">
+          <img src="images/svc-christmas.jpg" alt="Christmas Light Installation" loading="lazy">
           <div class="service-card-overlay"><h3>Christmas Light Installation</h3></div>
         </a>
 
         <!-- 10: Soft Washing -->
         <a class="service-card" href="service-softwash.html">
-          <img src="images/new-service-1.jpg" alt="Soft Washing">
+          <img src="images/svc-softwash.jpg" alt="Soft Washing" loading="lazy">
           <div class="service-card-overlay"><h3>Soft Washing</h3></div>
         </a>
       </div>
@@ -278,7 +279,7 @@
     <div class="container">
       <div class="why-us-grid">
         <div class="why-us-image reveal-left">
-          <img src="images/new-service-4.jpg" alt="Professional window cleaning team">
+          <img src="images/svc-hero-main.jpg" alt="Leaf Cleaning team in action" loading="lazy">
           <div class="why-us-badge">100% Satisfaction Guaranteed</div>
         </div>
 
@@ -353,7 +354,7 @@
       <div class="process-steps--image reveal">
 
         <div class="process-step--img">
-          <img src="images/new-service-4.jpg" alt="Step 1 — Scrub">
+          <img src="images/new-service-4.jpg" alt="Step 1 — Scrub" loading="lazy">
           <div class="process-step--img-overlay">
             <span class="process-step--img-num">1</span>
             <div class="process-step--img-title">Scrub</div>
@@ -362,7 +363,7 @@
         </div>
 
         <div class="process-step--img">
-          <img src="images/hero-squeegee.png" alt="Step 2 — Squeegee">
+          <img src="images/hero-squeegee.png" alt="Step 2 — Squeegee" loading="lazy">
           <div class="process-step--img-overlay">
             <span class="process-step--img-num">2</span>
             <div class="process-step--img-title">Squeegee</div>
@@ -371,7 +372,7 @@
         </div>
 
         <div class="process-step--img">
-          <img src="images/new-service-2.jpg" alt="Step 3 — Detail">
+          <img src="images/new-service-2.jpg" alt="Step 3 — Detail" loading="lazy">
           <div class="process-step--img-overlay">
             <span class="process-step--img-num">3</span>
             <div class="process-step--img-title">Detail</div>
@@ -380,7 +381,7 @@
         </div>
 
         <div class="process-step--img">
-          <img src="images/new-service-1.jpg" alt="Step 4 — LEAF RainBlock">
+          <img src="images/new-service-1.jpg" alt="Step 4 — LEAF RainBlock" loading="lazy">
           <div class="process-step--img-overlay">
             <span class="process-step--img-num">4</span>
             <div class="process-step--img-title">LEAF RainBlock</div>
@@ -624,7 +625,7 @@
        ======================================== -->
   <section class="featured-review" id="featured-review">
     <div class="featured-review-bg">
-      <img src="images/new-service-2.jpg" alt="Professional window cleaning">
+      <img src="images/new-service-2.jpg" alt="Professional window cleaning" loading="lazy">
       <div class="featured-review-overlay"></div>
     </div>
     <div class="featured-review-content reveal-scale">
@@ -662,7 +663,7 @@
       <div class="footer-main">
         <div class="footer-brand">
           <div class="footer-logo">
-            <img src="images/logo-icon-new.png" alt="Leaf Cleaning Logo">
+            <img src="images/logo-icon-new.png" alt="Leaf Cleaning Logo" loading="lazy">
             <span class="footer-logo-name">Leaf Cleaning</span>
           </div>
           <p>Professional window cleaning, gutter cleaning, and powerwashing services in Kearney and Lincoln, Nebraska. Your home deserves the best.</p>
@@ -1055,6 +1056,6 @@
 
 
   <!-- JavaScript -->
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

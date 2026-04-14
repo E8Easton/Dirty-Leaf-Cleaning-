@@ -331,7 +331,36 @@ const wizardState = {
   currentStep: 1,
   totalSteps: 6,
   preselectedService: null,
-  preselectedPlan: null
+  preselectedPlan: null,
+  addOns: [],           // add-on service IDs selected in step 4
+};
+
+// Add-on service map: primary service → related add-on service IDs
+const SVC_ADDONS = {
+  'exterior-windows':   ['interior-windows', 'screen-cleaning', 'track-detailing', 'pressure-washing'],
+  'interior-windows':   ['exterior-windows', 'screen-cleaning', 'track-detailing'],
+  'track-detailing':    ['exterior-windows', 'interior-windows', 'screen-cleaning'],
+  'gutters':            ['pressure-washing', 'soft-washing'],
+  'screen-cleaning':    ['exterior-windows', 'interior-windows', 'track-detailing'],
+  'pressure-washing':   ['gutters', 'soft-washing', 'exterior-windows'],
+  'solar-panel':        ['exterior-windows', 'soft-washing'],
+  'soft-washing':       ['pressure-washing', 'gutters', 'solar-panel'],
+  'christmas-lights':   ['exterior-windows', 'pressure-washing'],
+  'commercial-cleaning':['exterior-windows', 'pressure-washing', 'soft-washing'],
+};
+
+// Image + display name map for all services
+const SVC_INFO = {
+  'exterior-windows':   { img: 'images/svc-exterior.jpg',   name: 'Exterior Window Cleaning' },
+  'interior-windows':   { img: 'images/svc-interior.jpg',   name: 'Interior Window Cleaning' },
+  'track-detailing':    { img: 'images/svc-track.jpg',      name: 'Track Detailing' },
+  'gutters':            { img: 'images/svc-gutter.jpg',     name: 'Gutter Cleaning' },
+  'screen-cleaning':    { img: 'images/svc-screen.jpg',     name: 'Screen Cleaning' },
+  'pressure-washing':   { img: 'images/svc-powerwash.jpg',  name: 'Pressure Washing' },
+  'solar-panel':        { img: 'images/svc-solar.jpg',      name: 'Solar Panel Cleaning' },
+  'soft-washing':       { img: 'images/svc-softwash.jpg',   name: 'Soft Washing' },
+  'christmas-lights':   { img: 'images/svc-christmas.jpg',  name: 'Christmas Lights' },
+  'commercial-cleaning':{ img: 'images/svc-commercial.jpg', name: 'Commercial Cleaning' },
 };
 
 function initQuoteWizard() {
@@ -414,6 +443,7 @@ function openQuoteWizard(serviceId = null, planName = null) {
   wizardState.currentStep = 1;
   wizardState.preselectedService = serviceId;
   wizardState.preselectedPlan = planName;
+  wizardState.addOns = [];
 
   // Clear all radio/checkbox card selections
   overlay.querySelectorAll('.location-card, .property-card, .plan-card').forEach(card => {
@@ -500,7 +530,18 @@ function renderStep(step) {
   const target = document.getElementById(`wizard-step-${step}`);
   if (target) target.hidden = false;
 
+  const prevStep = wizardState.currentStep;
   wizardState.currentStep = step;
+
+  // When navigating back to step 4, reset service grid so user can re-pick
+  if (step === 4 && prevStep > 4) {
+    resetServiceGrid();
+  }
+
+  // When entering step 5, inject selected services summary above the plan cards
+  if (step === 5) {
+    injectPlanServiceSummary();
+  }
 
   // Update step label
   const label = document.getElementById('wizard-step-label');
@@ -666,9 +707,11 @@ function buildConfirmationSummary() {
   const property = propertyCard ? propertyCard.dataset.property : '';
 
   const selectedSvcCard = document.querySelector('.service-radio-card.selected');
-  const services = selectedSvcCard
-    ? [(selectedSvcCard.querySelector('.qp-svc-name') || selectedSvcCard.querySelector('.service-radio-name'))?.textContent.trim() || selectedSvcCard.dataset.service]
-    : [];
+  const primarySvcName = selectedSvcCard
+    ? (selectedSvcCard.querySelector('.qp-img-svc-name') || selectedSvcCard.querySelector('.qp-svc-name') || selectedSvcCard.querySelector('.service-radio-name'))?.textContent.trim() || (SVC_INFO[selectedSvcCard.dataset.service]?.name ?? selectedSvcCard.dataset.service)
+    : null;
+  const addOnNames = (wizardState.addOns || []).map(id => SVC_INFO[id]?.name ?? id);
+  const services = primarySvcName ? [primarySvcName, ...addOnNames] : addOnNames;
 
   const planCard = document.querySelector('.plan-card.selected');
   const plan = planCard ? planCard.dataset.plan : '';
@@ -725,23 +768,11 @@ function initPageWizard() {
     });
   });
 
-  // Wire up service cards — single select with deselect toggle
-  document.querySelectorAll('.service-radio-card').forEach(card => {
-    card.addEventListener('click', e => {
-      e.preventDefault();
-      const alreadySelected = card.classList.contains('selected');
-      // Clear all
-      document.querySelectorAll('.service-radio-card').forEach(c => {
-        c.classList.remove('selected');
-        const r = c.querySelector('input[type="radio"]');
-        if (r) r.checked = false;
-      });
-      // Toggle: if it wasn't selected, select it; if it was, leave deselected
-      if (!alreadySelected) {
-        card.classList.add('selected');
-        const rb = card.querySelector('input[type="radio"]');
-        if (rb) rb.checked = true;
-      }
+  // Wire up image service cards (Step 4) — new animated selection
+  document.querySelectorAll('#svc-img-grid .service-radio-card').forEach(card => {
+    card.addEventListener('click', () => {
+      if (card.classList.contains('selected')) return; // already selected
+      triggerServiceSelect(card);
     });
   });
 
@@ -771,6 +802,154 @@ function initPageWizard() {
   renderStep(1);
 }
 
+
+/* ==========================================================
+   SERVICE SELECTION — Step 4 animation + add-ons
+   ========================================================== */
+
+/**
+ * Animate a service card to "selected" state:
+ * fade out all others, keep the winner centered, show add-ons.
+ */
+function triggerServiceSelect(card) {
+  const grid = document.getElementById('svc-img-grid');
+  if (!grid) return;
+
+  const allCards = Array.from(grid.querySelectorAll('.qp-img-svc-card'));
+
+  // Phase 1 — fade out the losers
+  allCards.forEach(c => {
+    if (c !== card) c.classList.add('svc-fade-out');
+  });
+
+  // Phase 2 — after fade completes, collapse grid to single selected card
+  setTimeout(() => {
+    allCards.forEach(c => {
+      if (c !== card) c.style.display = 'none';
+    });
+    card.classList.add('selected');
+    card.classList.remove('svc-fade-out');
+    grid.classList.add('service-selected');
+
+    // Inject "Change service" button into selected card
+    if (!card.querySelector('.qp-svc-change-btn')) {
+      const changeBtn = document.createElement('button');
+      changeBtn.className = 'qp-svc-change-btn';
+      changeBtn.textContent = '✕ Change';
+      changeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        resetServiceGrid();
+      });
+      card.appendChild(changeBtn);
+    }
+
+    showAddOns(card.dataset.service);
+
+    // Scroll the Next button into view so users don't have to hunt for it
+    setTimeout(() => {
+      const nav = document.getElementById('qp-nav');
+      if (nav) nav.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    }, 380); // slight delay so add-ons have finished sliding in
+  }, 280);
+}
+
+/**
+ * Reset Step 4 grid back to showing all cards (e.g. user hits "Change").
+ */
+function resetServiceGrid() {
+  const grid = document.getElementById('svc-img-grid');
+  if (!grid) return;
+
+  grid.querySelectorAll('.qp-img-svc-card').forEach(c => {
+    c.style.display = '';
+    c.classList.remove('selected', 'svc-fade-out');
+    const btn = c.querySelector('.qp-svc-change-btn');
+    if (btn) btn.remove();
+  });
+  grid.classList.remove('service-selected');
+
+  // Hide add-ons panel and clear state
+  const addonsPanel = document.getElementById('addons-panel');
+  if (addonsPanel) addonsPanel.hidden = true;
+  wizardState.addOns = [];
+}
+
+/**
+ * Build and show the add-ons panel for the given primary service.
+ */
+function showAddOns(serviceId) {
+  const panel = document.getElementById('addons-panel');
+  const gridEl = document.getElementById('addons-grid');
+  if (!panel || !gridEl) return;
+
+  const relatedIds = SVC_ADDONS[serviceId] || [];
+  if (relatedIds.length === 0) {
+    panel.hidden = true;
+    return;
+  }
+
+  gridEl.innerHTML = '';
+  const checkSvg = `<svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>`;
+
+  relatedIds.forEach(id => {
+    const info = SVC_INFO[id];
+    if (!info) return;
+
+    const isActive = wizardState.addOns.includes(id);
+    const card = document.createElement('div');
+    card.className = 'qp-addon-card' + (isActive ? ' selected' : '');
+    card.dataset.addon = id;
+    card.innerHTML = `
+      <div class="qp-addon-bg" style="background-image:url('${info.img}')"></div>
+      <div class="qp-addon-overlay"></div>
+      <div class="qp-addon-content">
+        <span class="qp-addon-name">${info.name}</span>
+        <div class="qp-addon-check">${checkSvg}</div>
+      </div>`;
+
+    card.addEventListener('click', () => {
+      const idx = wizardState.addOns.indexOf(id);
+      if (idx === -1) {
+        wizardState.addOns.push(id);
+        card.classList.add('selected');
+      } else {
+        wizardState.addOns.splice(idx, 1);
+        card.classList.remove('selected');
+      }
+    });
+
+    gridEl.appendChild(card);
+  });
+
+  panel.hidden = false;
+}
+
+/**
+ * Inject (or update) the selected-services pill above the plan grid on Step 5.
+ */
+function injectPlanServiceSummary() {
+  const step5 = document.getElementById('wizard-step-5');
+  if (!step5) return;
+
+  const svcCard = document.querySelector('.service-radio-card.selected');
+  if (!svcCard) return;
+
+  const primaryName = (svcCard.querySelector('.qp-img-svc-name') || svcCard.querySelector('.qp-svc-name'))?.textContent.trim()
+    || SVC_INFO[svcCard.dataset.service]?.name
+    || svcCard.dataset.service;
+
+  const addOnNames = (wizardState.addOns || []).map(id => SVC_INFO[id]?.name ?? id);
+  const allLines = [primaryName, ...addOnNames];
+
+  // Remove existing summary if any
+  const existing = step5.querySelector('.qp-plan-svc-summary');
+  if (existing) existing.remove();
+
+  const div = document.createElement('div');
+  div.className = 'qp-plan-svc-summary';
+  div.innerHTML = `<strong>Your selection:</strong> ${allLines.join(' + ')}`;
+  step5.insertBefore(div, step5.querySelector('.qp-plan-grid'));
+}
 
 /* ==========================================================
    ADMIN TEST MODE — type "leafcleaning18" anywhere
@@ -921,9 +1100,13 @@ function collectQuoteData() {
     : 'Not specified';
 
   const svcCard = document.querySelector('.service-radio-card.selected');
-  const services = svcCard
-    ? (svcCard.querySelector('.qp-svc-name') || svcCard.querySelector('.service-radio-name'))?.textContent.trim() || svcCard.dataset.service
-    : 'Not specified';
+  const primarySvc = svcCard
+    ? (svcCard.querySelector('.qp-img-svc-name') || svcCard.querySelector('.qp-svc-name') || svcCard.querySelector('.service-radio-name'))?.textContent.trim() || (SVC_INFO[svcCard.dataset.service]?.name ?? svcCard.dataset.service)
+    : null;
+  const addOnNames = (wizardState.addOns || []).map(id => SVC_INFO[id]?.name ?? id);
+  const allServices = [primarySvc, ...addOnNames].filter(Boolean);
+  const services = allServices.length ? allServices.join(', ') : 'Not specified';
+  const addonsLine = addOnNames.length ? addOnNames.join(', ') : 'None';
 
   const planCard = document.querySelector('.plan-card.selected');
   const planMap = {
@@ -965,6 +1148,7 @@ function collectQuoteData() {
     `Location:  ${location}`,
     `Property:  ${property}`,
     `Service:   ${services}`,
+    `Add-ons:   ${addonsLine}`,
     `Plan:      ${plan}`,
     ``,
     `--- ADDRESS ---`,
@@ -984,6 +1168,7 @@ function collectQuoteData() {
     location,
     property_type:    property,
     services:         services,
+    addons:           addonsLine,
     plan:             plan,
     // Address
     street_address:   street,
@@ -1008,30 +1193,10 @@ function submitQuoteNotification() {
   const data = collectQuoteData();
 
   loadEmailJS(() => {
-    // ── Owner email ───────────────────────────────────────
+    // ── Owner email (single send — all data in {{message}}) ──
     emailjs.send(LEAF_NOTIFY.service_id, LEAF_NOTIFY.template_id, data)
       .then(() => console.info('[Leaf] Owner email sent ✓'))
       .catch(err => console.warn('[Leaf] Owner email failed:', err));
-
-    // ── SMS via carrier email gateway ─────────────────────
-    if (LEAF_NOTIFY.sms_gateway) {
-      const smsData = {
-        to_email:  LEAF_NOTIFY.sms_gateway,
-        reply_to:  data.customer_email,
-        sms_text:  [
-          '🌿 NEW LEAF QUOTE',
-          `${data.customer_name}`,
-          `📞 ${data.customer_phone}`,
-          `📍 ${data.street_address}, ${data.city_state_zip}`,
-          `🧹 ${data.services}`,
-          `📋 ${data.plan}`,
-          `⏰ ${data.submitted_at}`,
-        ].join('\n'),
-      };
-      emailjs.send(LEAF_NOTIFY.service_id, LEAF_NOTIFY.template_id, smsData)
-        .then(() => console.info('[Leaf] SMS gateway sent ✓'))
-        .catch(err => console.warn('[Leaf] SMS failed:', err));
-    }
   });
 }
 

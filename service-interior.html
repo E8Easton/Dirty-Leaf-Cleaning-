@@ -8,6 +8,7 @@
   <link rel="icon" type="image/png" href="images/logo-icon-new.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="images/svc-interior.jpg" as="image">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -15,7 +16,7 @@
   <!-- NAVBAR -->
   <nav class="navbar" id="navbar">
     <a href="index.html" class="navbar-logo">
-      <img src="images/logo-icon-new.png" alt="Leaf Cleaning Logo">
+      <img src="images/logo-icon-new.png" alt="Leaf Cleaning Logo" loading="lazy">
       <span class="navbar-logo-text">Leaf Cleaning</span>
     </a>
     <div class="navbar-links">
@@ -63,7 +64,7 @@
   <!-- PAGE HERO -->
   <div class="page-header">
     <div class="page-header-bg">
-      <img src="images/new-service-4.jpg" alt="Interior window cleaning">
+      <img src="images/svc-interior.jpg" alt="Interior window cleaning" loading="eager" fetchpriority="high">
     </div>
     <div class="container">
       <div class="page-header-badge">Our Services</div>
@@ -243,7 +244,7 @@
       </div>
       <div class="process-steps--image reveal">
         <div class="process-step--img">
-          <img src="images/new-service-4.jpg" alt="Step 1 — Dust & Prep">
+          <img src="images/new-service-4.jpg" alt="Step 1 — Dust & Prep" loading="lazy">
           <div class="process-step--img-overlay">
             <span class="process-step--img-num">1</span>
             <div class="process-step--img-title">Dust &amp; Prep</div>
@@ -251,7 +252,7 @@
           </div>
         </div>
         <div class="process-step--img">
-          <img src="images/hero-squeegee.png" alt="Step 2 — Clean & Scrub">
+          <img src="images/hero-squeegee.png" alt="Step 2 — Clean & Scrub" loading="lazy">
           <div class="process-step--img-overlay">
             <span class="process-step--img-num">2</span>
             <div class="process-step--img-title">Clean &amp; Scrub</div>
@@ -259,7 +260,7 @@
           </div>
         </div>
         <div class="process-step--img">
-          <img src="images/new-service-2.jpg" alt="Step 3 — Squeegee">
+          <img src="images/new-service-2.jpg" alt="Step 3 — Squeegee" loading="lazy">
           <div class="process-step--img-overlay">
             <span class="process-step--img-num">3</span>
             <div class="process-step--img-title">Squeegee</div>
@@ -267,7 +268,7 @@
           </div>
         </div>
         <div class="process-step--img">
-          <img src="images/new-service-1.jpg" alt="Step 4 — Sill Detail">
+          <img src="images/new-service-1.jpg" alt="Step 4 — Sill Detail" loading="lazy">
           <div class="process-step--img-overlay">
             <span class="process-step--img-num">4</span>
             <div class="process-step--img-title">Sill Detail</div>
@@ -355,7 +356,7 @@
       <div class="footer-main">
         <div class="footer-brand">
           <div class="footer-logo">
-            <img src="images/logo-icon-new.png" alt="Leaf Cleaning Logo">
+            <img src="images/logo-icon-new.png" alt="Leaf Cleaning Logo" loading="lazy">
             <span class="footer-logo-name">Leaf Cleaning</span>
           </div>
           <p>Professional window cleaning, gutter cleaning, and powerwashing services in Kearney and Lincoln, Nebraska. Your home deserves the best.</p>
@@ -522,6 +523,6 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
