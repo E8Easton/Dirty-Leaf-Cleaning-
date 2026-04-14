@@ -1988,6 +1988,7 @@ ul {
   right: 0;
   z-index: 998;
   padding: 12px 20px;
+  padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
   background: var(--leaf-navy-deep);
   border-top: 1px solid rgba(75, 174, 230, 0.2);
 }
@@ -4743,4 +4744,299 @@ body:not(.dark-page) .admin-test-trigger {
 
 body:not(.dark-page) .admin-test-trigger:hover {
   color: rgba(0,0,0,0.45);
+}
+
+
+/* ==========================================================
+   RESPONSIVE — Tablet / iPad  (768px – 1024px)
+   ========================================================== */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  :root {
+    --section-padding: 64px 0;
+    --container-padding: 0 28px;
+  }
+
+  /* Navbar → hamburger on tablet too */
+  .navbar-links { display: none; }
+  .hamburger    { display: flex; }
+  .mobile-menu  { display: flex; }
+
+  /* Hero */
+  .hero { min-height: 82vh; }
+  .hero-content { margin-left: 0; padding: 0 32px; max-width: 600px; }
+  .hero h1 { font-size: 3rem; }
+  .hero-badge { font-size: 0.8rem; padding: 6px 14px 6px 8px; }
+
+  /* Services grid */
+  .services-grid { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .service-card.service-card--large { grid-column: span 1; height: 180px; }
+  .service-card { height: 160px; }
+
+  /* Pricing: featured large, other two side-by-side below */
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .pricing-card.featured {
+    grid-column: span 2;
+    max-width: 380px;
+    margin: 0 auto;
+    order: -1;
+    transform: none;
+  }
+
+  /* Why us */
+  .why-us-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+
+  /* Reviews */
+  .reviews-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+
+  /* Process */
+  .process-steps { grid-template-columns: repeat(2, 1fr); gap: 40px 24px; }
+  .process-step-connector { display: none; }
+
+  /* Footer */
+  .footer-main { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+
+  /* Service pages: sidebar → horizontal pill-row */
+  .service-with-sidebar { grid-template-columns: 1fr; gap: 32px; }
+  .service-sidebar { position: static; order: -1; }
+  .service-sidebar-list { flex-direction: row; flex-wrap: wrap; gap: 8px; }
+  .service-sidebar-link {
+    padding: 8px 16px; font-size: 0.8rem;
+    background: var(--white); border: 1.5px solid rgba(75,174,230,0.18);
+    border-radius: 999px;
+  }
+  .service-sidebar-link:hover,
+  .service-sidebar-link.active { transform: none; }
+
+  /* Service page pricing: 2 cols */
+  .service-page-pricing .pricing-grid {
+    grid-template-columns: repeat(2, 1fr); max-width: 100%;
+  }
+  .service-page-pricing .pricing-card.featured {
+    grid-column: span 2; max-width: 380px; margin: 0 auto;
+  }
+
+  /* Quote wizard: more columns */
+  .qp-service-grid { grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .qp-plan-grid { grid-template-columns: repeat(2, 1fr); }
+  .qp-plan-card--onetime { grid-column: 1 / -1; }
+  .qp-form-row { grid-template-columns: 1fr 1fr; }
+
+  /* CTA */
+  .cta-section     { padding: 80px 0; }
+  .service-final-cta { padding: 80px 0; }
+
+  /* Share review */
+  .share-review-wrap { max-width: 420px; }
+}
+
+
+/* ==========================================================
+   RESPONSIVE — Mobile phones  (≤ 767px)
+   ========================================================== */
+@media (max-width: 767px) {
+
+  :root {
+    --section-padding: 48px 0;
+    --container-padding: 0 18px;
+  }
+
+  html { font-size: 15px; }
+
+  /* Safe-area padding for iPhone notch / home bar */
+  body { padding-bottom: env(safe-area-inset-bottom, 0px); }
+
+  /* ─── Navbar ─── */
+  .navbar { width: calc(100% - 24px); top: 10px; padding: 10px 18px; }
+  .navbar-links { display: none; }
+  .hamburger    { display: flex; }
+  .mobile-menu  { display: flex; }
+  .mobile-sticky-cta { display: block; }
+
+  /* ─── Hero ─── */
+  .hero { min-height: 100svh; min-height: 100vh; }
+  .hero-content { margin-left: 0; padding: 20px 20px 40px; text-align: center; }
+  .hero h1 { font-size: 2.2rem; line-height: 1.18; }
+  .hero-subtitle { font-size: 1rem; margin-bottom: 28px; }
+  .hero-cta { justify-content: center; flex-wrap: wrap; gap: 12px; }
+  .hero-badge { margin: 0 auto 20px; font-size: 0.75rem; padding: 5px 12px 5px 6px; }
+  .hero-trust { justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 20px; font-size: 0.78rem; }
+
+  /* ─── Section headings ─── */
+  .section-title h2 { font-size: 1.75rem; }
+  .section-title p  { font-size: 0.95rem; }
+
+  /* ─── Services grid ─── */
+  .services-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .service-card  { height: 140px; }
+  .service-card.service-card--large { grid-column: span 2; height: 190px; }
+
+  /* ─── Pricing ─── */
+  .pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+  .pricing-card.featured { transform: none; order: -1; }
+  .pricing-card.featured:hover { transform: translateY(-4px); }
+
+  /* ─── Why us ─── */
+  .why-us-grid { grid-template-columns: 1fr; gap: 32px; }
+  .why-us-image { order: -1; border-radius: 16px; overflow: hidden; }
+
+  /* ─── Reviews ─── */
+  .reviews-grid { grid-template-columns: 1fr; gap: 14px; }
+
+  /* ─── Process ─── */
+  .process-steps { grid-template-columns: 1fr; gap: 32px; }
+  .process-step-connector { display: none; }
+
+  /* ─── CTA section ─── */
+  .cta-section   { padding: 64px 0; }
+  .cta-section h2 { font-size: 1.8rem; }
+  .cta-section p  { font-size: 0.95rem; margin-bottom: 28px; }
+  .btn-dark { width: 100%; max-width: 340px; padding: 16px 28px; font-size: 0.95rem; justify-content: center; }
+  .cta-phone { font-size: 0.95rem; }
+
+  /* ─── Service area ─── */
+  .area-cards { grid-template-columns: 1fr; }
+  .area-maps-grid { grid-template-columns: 1fr; }
+
+  /* ─── Testimonials ─── */
+  .testimonials-header { flex-direction: column; gap: 10px; }
+
+  /* ─── Featured review ─── */
+  .featured-review { min-height: 420px; padding: 56px 20px; }
+  .featured-review-stars svg { width: 26px; height: 26px; }
+  .featured-review-rating { font-size: 1.6rem; }
+
+  /* ─── Share review card ─── */
+  .share-review-wrap { margin: 28px auto; max-width: 100%; padding: 24px 18px 22px; }
+  .share-review-btn { font-size: 0.82rem; padding: 11px 20px; }
+
+  /* ─── Footer ─── */
+  .footer-main { grid-template-columns: 1fr; gap: 28px; }
+  .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+  .footer { padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px)); }
+
+  /* ─── SERVICE PAGES ─── */
+
+  .service-hero { padding: 120px 0 64px; }
+  .service-hero h1 { font-size: 2rem; }
+
+  /* Sidebar → pill row above content */
+  .service-with-sidebar { grid-template-columns: 1fr; gap: 24px; }
+  .service-sidebar { position: static; order: -1; }
+  .service-sidebar-list { flex-direction: row; flex-wrap: wrap; gap: 7px; }
+  .service-sidebar-link {
+    padding: 7px 14px; font-size: 0.78rem;
+    background: var(--white); border: 1.5px solid rgba(75,174,230,0.2);
+    border-radius: 999px; flex-shrink: 0;
+  }
+  .service-sidebar-link:hover,
+  .service-sidebar-link.active { transform: none; }
+
+  /* Service page pricing stack */
+  .service-page-pricing .pricing-grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }
+  .service-page-pricing .pricing-card.featured { order: -1; }
+
+  /* Service final CTA */
+  .service-final-cta { padding: 64px 0; }
+  .service-final-cta h2 { font-size: 1.8rem; }
+  .service-final-cta .subtitle { font-size: 0.95rem; margin-bottom: 28px; }
+  .service-final-cta-btns { flex-direction: column; align-items: center; gap: 12px; }
+  .service-final-cta .btn-dark,
+  .service-final-cta .btn-outline-dark {
+    width: 100%; max-width: 320px; justify-content: center;
+  }
+
+  /* ─── Touch targets (44px min per Apple HIG) ─── */
+  input, select, textarea, button, a[class*="btn"], .qp-next-btn, .qp-back-btn {
+    min-height: 44px;
+  }
+  .qp-svc-card, .qp-sel-card, .qp-plan-card { min-height: 44px; }
+
+  /* ─── QUOTE WIZARD (qp-) ─── */
+
+  /* Progress bar */
+  .qp-progress-bar { padding: 8px 14px 10px; }
+  .qp-progress-bar .step-connector { width: 3px; }
+
+  /* Close button */
+  .qp-close-float { top: 10px; right: 10px; width: 34px; height: 34px; }
+  .qp-close-float svg { width: 14px; height: 14px; }
+
+  /* Main padding */
+  .qp-main { padding: 20px 14px 16px; }
+
+  /* Headings */
+  .qp-title  { font-size: 1.2rem; margin-bottom: 18px; letter-spacing: 0.03em; }
+  .qp-subtitle { font-size: 0.82rem; margin: -12px 0 18px; }
+
+  /* Location / property cards → full-width rows */
+  .qp-card-row { flex-direction: column; align-items: center; gap: 12px; }
+  .qp-sel-card {
+    width: 100%; max-width: 360px; min-height: auto;
+    flex-direction: row; padding: 16px 20px; gap: 16px;
+    justify-content: flex-start; align-items: center;
+  }
+  .qp-card-icon { width: 44px; height: 44px; flex-shrink: 0; }
+  .qp-sel-card h3 { font-size: 1rem; margin: 0; text-align: left; }
+  .qp-sel-card p  { font-size: 0.78rem; text-align: left; margin: 0; }
+
+  /* Service icon grid → 2 cols */
+  .qp-service-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .qp-svc-card { padding: 14px 8px 12px; gap: 6px; }
+  .qp-svc-icon { width: 38px; height: 38px; }
+  .qp-svc-name { font-size: 0.7rem; }
+  .qp-card-check { width: 18px; height: 18px; top: 7px; right: 7px; }
+  .qp-card-check svg { width: 10px; height: 10px; }
+
+  /* Plan grid → 1 col */
+  .qp-plan-grid { grid-template-columns: 1fr; gap: 12px; max-width: 360px; margin: 0 auto; }
+  .qp-plan-card--onetime {
+    grid-column: 1 / -1; flex-direction: column;
+    align-items: flex-start; gap: 8px; padding: 16px 18px;
+  }
+  .qp-plan-card--onetime .qp-card-check { position: absolute; }
+  .qp-plan-savings { font-size: 2rem; }
+
+  /* Contact form → 1 col */
+  .qp-form-row { grid-template-columns: 1fr; gap: 12px; }
+  .qp-form { gap: 12px; }
+
+  /* Nav buttons */
+  .qp-nav { gap: 10px; padding: 12px 14px; width: 100%; }
+  .qp-next-btn { flex: 1; padding: 14px 16px; font-size: 0.9rem; justify-content: center; }
+  .qp-back-btn { padding: 12px 16px; font-size: 0.86rem; }
+
+  /* Confirmation step */
+  .qp-confirm-box { padding: 24px 16px; }
+  .qp-confirm-btns { flex-direction: column; gap: 10px; }
+  .qp-btn-primary, .qp-btn-secondary {
+    width: 100%; text-align: center; justify-content: center;
+  }
+}
+
+
+/* ==========================================================
+   RESPONSIVE — Small phones  (≤ 390px)
+   ========================================================== */
+@media (max-width: 390px) {
+  .hero h1      { font-size: 1.85rem; }
+  .section-title h2 { font-size: 1.5rem; }
+
+  /* Stack services to 1 col on tiny phones */
+  .services-grid { grid-template-columns: 1fr; }
+  .service-card.service-card--large { grid-column: span 1; }
+
+  /* Quote wizard: keep 2-col service grid, just tighter */
+  .qp-service-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+  .qp-svc-card { padding: 10px 6px; }
+  .qp-svc-name { font-size: 0.65rem; }
+  .qp-plan-grid { max-width: 100%; }
+  .pricing-grid { max-width: 100%; }
+
+  /* Nav */
+  .navbar { width: calc(100% - 16px); }
 }
