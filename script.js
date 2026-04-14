@@ -2,16 +2,35 @@
    LEAF CLEANING — Interactions & Animations
    ========================================================== */
 
+/* ----------------------------------------------------------
+   NOTIFICATION CONFIG — Fill these in after EmailJS setup
+   (see setup instructions at the bottom of this file)
+   ---------------------------------------------------------- */
+const LEAF_NOTIFY = {
+  public_key:   'l9uOWTh2tT3gqUag8',
+  service_id:   'service_umf782h',
+  template_id:  'template_cry5s9x',
+  owner_email:  'dirtyleafcleaning@gmail.com',
+
+  // SMS gateway — fill in your carrier:
+  //    Verizon  → 4023090128@vtext.com
+  //    AT&T     → 4023090128@txt.att.net
+  //    T-Mobile → 4023090128@tmomail.net
+  //    Sprint   → 4023090128@messaging.sprintpcs.com
+  sms_gateway:  '4023090128@vtext.com',
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initMobileMenu();
   initScrollReveal();
   initHeroParticles();
-  initHeroParallax();
+  // initHeroParallax(); // disabled — keeps hero image still
   initSmoothScroll();
   initReviewsCarousel();
   initCounterAnimation();
   initQuoteWizard();
+  initPageWizard();
   initFAQ();
 });
 
@@ -343,12 +362,21 @@ function initQuoteWizard() {
     });
   });
 
-  // Service cards — multi-select checkboxes
+  // Service cards — single select with deselect toggle
   overlay.querySelectorAll('.service-radio-card').forEach(card => {
-    card.addEventListener('click', () => {
-      card.classList.toggle('selected');
-      const cb = card.querySelector('input[type="checkbox"]');
-      if (cb) cb.checked = card.classList.contains('selected');
+    card.addEventListener('click', e => {
+      e.preventDefault();
+      const alreadySelected = card.classList.contains('selected');
+      overlay.querySelectorAll('.service-radio-card').forEach(c => {
+        c.classList.remove('selected');
+        const r = c.querySelector('input[type="radio"]');
+        if (r) r.checked = false;
+      });
+      if (!alreadySelected) {
+        card.classList.add('selected');
+        const rb = card.querySelector('input[type="radio"]');
+        if (rb) rb.checked = true;
+      }
     });
   });
 
@@ -445,6 +473,7 @@ function handleNext() {
 
   if (currentStep === totalSteps) {
     buildConfirmationSummary();
+    submitQuoteNotification(); // send email + SMS to owner
     renderStep(7); // confirmation
   } else {
     renderStep(currentStep + 1);
@@ -479,8 +508,9 @@ function renderStep(step) {
     label.textContent = step <= 6 ? `Step ${step} of 6` : 'Quote Submitted';
   }
 
-  // Update step dots (only dots 1-6, step 7 = confirmation, no dot)
-  overlay.querySelectorAll('.step-dot').forEach(dot => {
+  // Update step dots — works in both modal and full-page mode
+  const dotRoot = overlay || document;
+  dotRoot.querySelectorAll('.step-dot').forEach(dot => {
     const dotStep = parseInt(dot.dataset.step);
     dot.classList.remove('active', 'done');
     if (dotStep < step) dot.classList.add('done');
@@ -488,7 +518,7 @@ function renderStep(step) {
   });
 
   // Update connectors
-  overlay.querySelectorAll('.step-connector').forEach((conn, idx) => {
+  dotRoot.querySelectorAll('.step-connector').forEach((conn, idx) => {
     conn.classList.toggle('done', step > idx + 1);
   });
 
@@ -499,19 +529,33 @@ function renderStep(step) {
   // Footer & Next button
   const nextBtn = document.getElementById('wizard-next');
   const wizardFooter = document.getElementById('wizard-footer');
+  const isPageMode = wizardState.pageMode;
 
   if (step === 7) {
     if (wizardFooter) wizardFooter.style.display = 'none';
+    // Page mode: hide the whole nav bar on confirmation
+    const qpNav = document.getElementById('qp-nav');
+    if (qpNav) qpNav.style.display = 'none';
   } else {
     if (wizardFooter) wizardFooter.style.display = '';
+    const qpNav = document.getElementById('qp-nav');
+    if (qpNav) qpNav.style.display = '';
     const isLastStep = step === wizardState.totalSteps;
-    const arrowSvg = '<svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:none;stroke:var(--leaf-navy);stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>';
-    if (nextBtn) nextBtn.innerHTML = (isLastStep ? 'Get My Quote ' : 'Next Step ') + arrowSvg;
+    if (!isPageMode) {
+      const arrowSvg = '<svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:none;stroke:var(--leaf-navy);stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>';
+      if (nextBtn) nextBtn.innerHTML = (isLastStep ? 'Get My Quote ' : 'Next Step ') + arrowSvg;
+    } else {
+      if (nextBtn) nextBtn.textContent = isLastStep ? 'Get My Quote →' : 'Next →';
+    }
   }
 
-  // Scroll modal to top
-  const modal = overlay.querySelector('.wizard-modal');
-  if (modal) modal.scrollTop = 0;
+  // Scroll to top
+  if (overlay) {
+    const modal = overlay.querySelector('.wizard-modal');
+    if (modal) modal.scrollTop = 0;
+  } else {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }
 
 function validateStep(step) {
@@ -530,8 +574,6 @@ function validateStep(step) {
     const lastName = document.getElementById('contact-last');
     const phone = document.getElementById('contact-phone');
     const email = document.getElementById('contact-email');
-    const privacy = document.getElementById('consent-privacy');
-
     if (!firstName.value.trim() || !lastName.value.trim()) {
       showError('step2-error', 'Please enter your first and last name.');
       firstName.focus();
@@ -547,10 +589,6 @@ function validateStep(step) {
       phone.focus();
       return false;
     }
-    if (!privacy.checked) {
-      showError('step2-error', 'Please agree to the Privacy Policy & Terms of Service to continue.');
-      return false;
-    }
     return true;
   }
 
@@ -563,8 +601,8 @@ function validateStep(step) {
   }
 
   if (step === 4) {
-    if (!document.querySelectorAll('.service-radio-card.selected').length) {
-      showError('step4-error', 'Please select at least one service to continue.');
+    if (!document.querySelector('.service-radio-card.selected')) {
+      showError('step4-error', 'Please select a service to continue.');
       return false;
     }
     return true;
@@ -627,8 +665,10 @@ function buildConfirmationSummary() {
   const propertyCard = document.querySelector('.property-card.selected');
   const property = propertyCard ? propertyCard.dataset.property : '';
 
-  const services = [...document.querySelectorAll('.service-radio-card.selected')]
-    .map(c => c.querySelector('.service-radio-name').textContent.trim());
+  const selectedSvcCard = document.querySelector('.service-radio-card.selected');
+  const services = selectedSvcCard
+    ? [(selectedSvcCard.querySelector('.qp-svc-name') || selectedSvcCard.querySelector('.service-radio-name'))?.textContent.trim() || selectedSvcCard.dataset.service]
+    : [];
 
   const planCard = document.querySelector('.plan-card.selected');
   const plan = planCard ? planCard.dataset.plan : '';
@@ -653,3 +693,420 @@ function buildConfirmationSummary() {
     <strong>Contact:</strong> ${firstName} ${lastName} · ${phone} · ${email}
   `;
 }
+
+
+/* ==========================================================
+   QUOTE PAGE — Standalone page-mode wizard
+   ========================================================== */
+
+function initPageWizard() {
+  // Only runs on quote.html (body.qp, no #wizard-overlay)
+  if (!document.body.classList.contains('qp')) return;
+  const pageWizard = document.body;
+
+  // Mark wizard state as page mode so renderStep skips modal logic
+  wizardState.pageMode = true;
+
+  // Wire up next/back buttons (same IDs as modal wizard)
+  const nextBtn = document.getElementById('wizard-next');
+  const backBtn = document.getElementById('wizard-back');
+  if (nextBtn) nextBtn.addEventListener('click', handleNext);
+  if (backBtn) backBtn.addEventListener('click', handleBack);
+
+  // Wire up radio-style cards (location, property, plan)
+  ['.location-card', '.property-card', '.plan-card'].forEach(sel => {
+    document.querySelectorAll(sel).forEach(card => {
+      card.addEventListener('click', () => {
+        document.querySelectorAll(sel).forEach(c => c.classList.remove('selected'));
+        card.classList.add('selected');
+        const rb = card.querySelector('input[type="radio"]');
+        if (rb) rb.checked = true;
+      });
+    });
+  });
+
+  // Wire up service cards — single select with deselect toggle
+  document.querySelectorAll('.service-radio-card').forEach(card => {
+    card.addEventListener('click', e => {
+      e.preventDefault();
+      const alreadySelected = card.classList.contains('selected');
+      // Clear all
+      document.querySelectorAll('.service-radio-card').forEach(c => {
+        c.classList.remove('selected');
+        const r = c.querySelector('input[type="radio"]');
+        if (r) r.checked = false;
+      });
+      // Toggle: if it wasn't selected, select it; if it was, leave deselected
+      if (!alreadySelected) {
+        card.classList.add('selected');
+        const rb = card.querySelector('input[type="radio"]');
+        if (rb) rb.checked = true;
+      }
+    });
+  });
+
+  // Read URL params and pre-select service / plan
+  const params = new URLSearchParams(window.location.search);
+  const preService = params.get('service');
+  const prePlan    = params.get('plan');
+
+  if (preService) {
+    const card = pageWizard.querySelector(`[data-service="${preService}"]`);
+    if (card) {
+      card.classList.add('selected');
+      const cb = card.querySelector('input');
+      if (cb) cb.checked = true;
+    }
+  }
+  if (prePlan) {
+    const card = pageWizard.querySelector(`[data-plan="${prePlan.toLowerCase()}"]`);
+    if (card) {
+      card.classList.add('selected');
+      const rb = card.querySelector('input');
+      if (rb) rb.checked = true;
+    }
+  }
+
+  // Start at step 1
+  renderStep(1);
+}
+
+
+/* ==========================================================
+   ADMIN TEST MODE — type "leafcleaning18" anywhere
+   ========================================================== */
+
+function initAdminTestMode() {
+  // Tiny trigger button in bottom-left (only on quote page)
+  const triggerBtn = document.getElementById('admin-trigger');
+  if (triggerBtn) {
+    triggerBtn.addEventListener('click', promptAdminCode);
+  }
+
+  // Also activate by typing the passphrase anywhere on page
+  let keyBuffer = '';
+  document.addEventListener('keydown', e => {
+    // Don't capture while typing in inputs
+    if (['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName)) return;
+    keyBuffer += e.key.toLowerCase();
+    if (keyBuffer.includes('leafcleaning18')) {
+      keyBuffer = '';
+      activateTestMode();
+    }
+    if (keyBuffer.length > 30) keyBuffer = keyBuffer.slice(-30);
+  });
+}
+
+function promptAdminCode() {
+  const code = window.prompt('Enter admin code:');
+  if (code && code.toLowerCase() === 'leafcleaning18') {
+    activateTestMode();
+  } else if (code !== null) {
+    alert('Incorrect code.');
+  }
+}
+
+function activateTestMode() {
+  if (document.getElementById('admin-test-banner')) return; // already active
+
+  // Show banner
+  const banner = document.createElement('div');
+  banner.id = 'admin-test-banner';
+  banner.className = 'admin-test-banner';
+  banner.textContent = '🧪 TEST MODE ACTIVE';
+  document.body.appendChild(banner);
+
+  // Fill all wizard fields with fake test data
+  const fill = (id, val) => { const el = document.getElementById(id); if (el) el.value = val; };
+  fill('contact-first', 'Test');
+  fill('contact-last',  'User');
+  fill('contact-email', 'test@leafcleaning.com');
+  fill('contact-phone', '(402) 555-0000');
+  fill('contact-heard', 'google');
+  fill('contact-promo', 'TEST2025');
+  fill('prop-street',   '123 Test Street');
+  fill('prop-city',     'Kearney');
+  fill('prop-zip',      '68847');
+  fill('prop-notes',    'This is a test submission — please ignore.');
+
+  // Check all consent boxes
+  ['consent-sms-alerts','consent-sms-promo','consent-marketing','consent-privacy']
+    .forEach(id => { const el = document.getElementById(id); if (el) el.checked = true; });
+
+  // Select location: Kearney
+  const locationCard = document.querySelector('[data-location="kearney"]');
+  if (locationCard) {
+    document.querySelectorAll('.location-card').forEach(c => c.classList.remove('selected'));
+    locationCard.classList.add('selected');
+    const rb = locationCard.querySelector('input');
+    if (rb) rb.checked = true;
+  }
+
+  // Select property: residential
+  const propCard = document.querySelector('[data-property="residential"]');
+  if (propCard) {
+    document.querySelectorAll('.property-card').forEach(c => c.classList.remove('selected'));
+    propCard.classList.add('selected');
+    const rb = propCard.querySelector('input');
+    if (rb) rb.checked = true;
+  }
+
+  // Select service: exterior-windows
+  const svcCard = document.querySelector('[data-service="exterior-windows"]');
+  if (svcCard) {
+    svcCard.classList.add('selected');
+    const cb = svcCard.querySelector('input');
+    if (cb) cb.checked = true;
+  }
+
+  // Select plan: quarterly
+  const planCard = document.querySelector('[data-plan="quarterly"]');
+  if (planCard) {
+    document.querySelectorAll('.plan-card').forEach(c => c.classList.remove('selected'));
+    planCard.classList.add('selected');
+    const rb = planCard.querySelector('input');
+    if (rb) rb.checked = true;
+  }
+
+  // Add floating "Submit Test" button
+  const submitBtn = document.createElement('button');
+  submitBtn.textContent = '🧪 Submit Test Booking';
+  submitBtn.style.cssText = [
+    'position:fixed', 'bottom:60px', 'right:20px',
+    'background:#f59e0b', 'color:#1a1a1a', 'border:none',
+    'padding:12px 22px', 'border-radius:999px', 'font-weight:800',
+    'font-size:0.9rem', 'cursor:pointer', 'z-index:99999',
+    'box-shadow:0 4px 20px rgba(0,0,0,0.25)', 'font-family:sans-serif',
+  ].join(';');
+  submitBtn.onclick = () => {
+    buildConfirmationSummary();
+    submitQuoteNotification();
+    renderStep(7);
+    submitBtn.remove();
+  };
+  document.body.appendChild(submitBtn);
+
+  console.info('[Leaf Admin] Test mode active — fields pre-filled, click the yellow button to submit.');
+}
+
+
+/* ==========================================================
+   QUOTE NOTIFICATIONS — Email + SMS via EmailJS
+   ========================================================== */
+
+function loadEmailJS(callback) {
+  if (window.emailjs) {
+    callback();
+    return;
+  }
+  const s = document.createElement('script');
+  s.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
+  s.onload = () => {
+    emailjs.init(LEAF_NOTIFY.public_key);
+    callback();
+  };
+  s.onerror = () => console.warn('[Leaf] Failed to load EmailJS SDK');
+  document.head.appendChild(s);
+}
+
+function collectQuoteData() {
+  const locationCard = document.querySelector('.location-card.selected');
+  const location = locationCard
+    ? (locationCard.dataset.location === 'kearney' ? 'Kearney, NE' : 'Lincoln, NE')
+    : 'Not specified';
+
+  const propertyCard = document.querySelector('.property-card.selected');
+  const property = propertyCard
+    ? (propertyCard.dataset.property === 'residential' ? 'Residential' : 'Commercial')
+    : 'Not specified';
+
+  const svcCard = document.querySelector('.service-radio-card.selected');
+  const services = svcCard
+    ? (svcCard.querySelector('.qp-svc-name') || svcCard.querySelector('.service-radio-name'))?.textContent.trim() || svcCard.dataset.service
+    : 'Not specified';
+
+  const planCard = document.querySelector('.plan-card.selected');
+  const planMap = {
+    monthly:    'Monthly ($150 OFF per cleaning)',
+    quarterly:  'Quarterly ($100 OFF per cleaning)',
+    biannual:   'Bi-Annual ($50 OFF per cleaning)',
+    'one-time': 'One-Time Visit',
+  };
+  const plan = planCard ? (planMap[planCard.dataset.plan] || planCard.dataset.plan) : 'Not specified';
+
+  const firstName  = document.getElementById('contact-first')?.value.trim()  || '';
+  const lastName   = document.getElementById('contact-last')?.value.trim()   || '';
+  const phone      = document.getElementById('contact-phone')?.value.trim()  || '';
+  const email      = document.getElementById('contact-email')?.value.trim()  || '';
+  const street     = document.getElementById('prop-street')?.value.trim()    || '';
+  const city       = document.getElementById('prop-city')?.value.trim()      || '';
+  const zip        = document.getElementById('prop-zip')?.value.trim()       || '';
+  const notes      = document.getElementById('prop-notes')?.value.trim()     || 'None';
+
+  const now = new Date();
+  const submittedAt = now.toLocaleDateString('en-US', {
+    weekday: 'long', year: 'numeric', month: 'long',
+    day: 'numeric', hour: '2-digit', minute: '2-digit',
+  });
+
+  const fullName = `${firstName} ${lastName}`.trim() || 'Unknown';
+  const addressFull = [street, city ? `${city}, NE` : '', zip].filter(Boolean).join(' ');
+
+  const message = [
+    `=== NEW QUOTE REQUEST ===`,
+    `Submitted: ${submittedAt}`,
+    ``,
+    `--- CONTACT ---`,
+    `Name:    ${fullName}`,
+    `Email:   ${email || 'Not provided'}`,
+    `Phone:   ${phone || 'Not provided'}`,
+    ``,
+    `--- JOB DETAILS ---`,
+    `Location:  ${location}`,
+    `Property:  ${property}`,
+    `Service:   ${services}`,
+    `Plan:      ${plan}`,
+    ``,
+    `--- ADDRESS ---`,
+    `${addressFull || 'Not provided'}`,
+    ``,
+    `--- NOTES ---`,
+    `${notes}`,
+  ].join('\n');
+
+  return {
+    // Contact
+    customer_name:    fullName,
+    first_name:       firstName,
+    customer_email:   email,
+    customer_phone:   phone,
+    // Job details
+    location,
+    property_type:    property,
+    services:         services,
+    plan:             plan,
+    // Address
+    street_address:   street,
+    city_state_zip:   `${city}, NE ${zip}`,
+    special_notes:    notes,
+    // Full formatted message (use {{message}} in EmailJS template)
+    message,
+    // Meta
+    submitted_at:     submittedAt,
+    to_email:         LEAF_NOTIFY.owner_email,
+    reply_to:         email,
+  };
+}
+
+function submitQuoteNotification() {
+  // Skip if EmailJS hasn't been configured yet
+  if (!LEAF_NOTIFY.public_key || LEAF_NOTIFY.public_key === 'YOUR_EMAILJS_PUBLIC_KEY') {
+    console.info('[Leaf] EmailJS not configured — skipping notification');
+    return;
+  }
+
+  const data = collectQuoteData();
+
+  loadEmailJS(() => {
+    // ── Owner email ───────────────────────────────────────
+    emailjs.send(LEAF_NOTIFY.service_id, LEAF_NOTIFY.template_id, data)
+      .then(() => console.info('[Leaf] Owner email sent ✓'))
+      .catch(err => console.warn('[Leaf] Owner email failed:', err));
+
+    // ── SMS via carrier email gateway ─────────────────────
+    if (LEAF_NOTIFY.sms_gateway) {
+      const smsData = {
+        to_email:  LEAF_NOTIFY.sms_gateway,
+        reply_to:  data.customer_email,
+        sms_text:  [
+          '🌿 NEW LEAF QUOTE',
+          `${data.customer_name}`,
+          `📞 ${data.customer_phone}`,
+          `📍 ${data.street_address}, ${data.city_state_zip}`,
+          `🧹 ${data.services}`,
+          `📋 ${data.plan}`,
+          `⏰ ${data.submitted_at}`,
+        ].join('\n'),
+      };
+      emailjs.send(LEAF_NOTIFY.service_id, LEAF_NOTIFY.template_id, smsData)
+        .then(() => console.info('[Leaf] SMS gateway sent ✓'))
+        .catch(err => console.warn('[Leaf] SMS failed:', err));
+    }
+  });
+}
+
+/* ==========================================================
+   EMAILJS SETUP INSTRUCTIONS
+   ===========================================================
+
+   STEP 1 — Create your free EmailJS account
+   → Go to https://www.emailjs.com and sign up (free = 200 emails/month)
+
+   STEP 2 — Connect your Gmail
+   → Dashboard → Email Services → Add New Service → Gmail
+   → Sign in with your Gmail → copy the Service ID it gives you
+   → Paste it as: service_id: 'service_xxxxxxx'
+
+   STEP 3 — Create your email template
+   → Dashboard → Email Templates → Create New Template
+   → Set "To Email": {{to_email}}
+   → Set "Reply To": {{reply_to}}
+   → Set "Subject":  🌿 New Quote Request — {{customer_name}}
+   → Paste this into the Body (HTML or text):
+
+   ─────────────────────────────────────────
+   NEW QUOTE REQUEST — Leaf Cleaning
+   Submitted: {{submitted_at}}
+
+   CUSTOMER
+   Name:    {{customer_name}}
+   Email:   {{customer_email}}
+   Phone:   {{customer_phone}}
+   Heard:   {{heard_from}}
+   Promo:   {{promo_code}}
+
+   JOB DETAILS
+   Location:  {{location}}
+   Property:  {{property_type}}
+   Services:  {{services}}
+   Plan:      {{plan}}
+
+   ADDRESS
+   {{street_address}}
+   {{city_state_zip}}
+
+   NOTES
+   {{special_notes}}
+
+   CONSENTS
+   SMS Alerts:  {{consent_sms}}
+   Promo SMS:   {{consent_promo}}
+   ─────────────────────────────────────────
+
+   → Save → copy the Template ID
+   → Paste as: template_id: 'template_xxxxxxx'
+
+   STEP 4 — Get your Public Key
+   → Dashboard → Account → API Keys → Public Key
+   → Paste as: public_key: 'xxxxxxxxxxxxxxx'
+
+   STEP 5 — Set your email & SMS gateway
+   → Set owner_email to your Gmail address
+   → Find your phone carrier's SMS email gateway:
+       Verizon:  YOUR_NUMBER@vtext.com
+       AT&T:     YOUR_NUMBER@txt.att.net
+       T-Mobile: YOUR_NUMBER@tmomail.net
+       Sprint:   YOUR_NUMBER@messaging.sprintpcs.com
+   → Paste as: sms_gateway: '4023090128@vtext.com'
+
+   STEP 6 — Gmail auto-label (one-time, 2 minutes)
+   → In Gmail → Settings (gear) → See all settings
+   → Filters and Blocked Addresses → Create a new filter
+   → In "Subject" box type:  New Quote Request — Leaf Cleaning
+   → Click "Create filter"
+   → Check "Apply the label" → New label → name it "Leaf Quotes"
+   → Check "Also apply filter to matching conversations"
+   → Click "Create filter"
+   → Every new booking email will auto-land in that label!
+
+   ========================================================== */

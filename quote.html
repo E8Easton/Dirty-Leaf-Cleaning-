@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get a Free Quote | Leaf Cleaning</title>
+  <meta name="description" content="Get a free custom quote for window cleaning, gutter cleaning, powerwashing, and more in Kearney and Lincoln, Nebraska.">
+  <link rel="icon" type="image/png" href="images/logo-icon-new.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="qp">
+
+  <!-- Floating close button -->
+  <a href="index.html" class="qp-close-float" aria-label="Back to site">
+    <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg>
+  </a>
+
+  <!-- PROGRESS BAR — very top -->
+  <div class="qp-progress-bar">
+    <div class="wizard-step-dots">
+      <span class="step-dot active" data-step="1"></span>
+      <div class="step-connector"></div>
+      <span class="step-dot" data-step="2"></span>
+      <div class="step-connector"></div>
+      <span class="step-dot" data-step="3"></span>
+      <div class="step-connector"></div>
+      <span class="step-dot" data-step="4"></span>
+      <div class="step-connector"></div>
+      <span class="step-dot" data-step="5"></span>
+      <div class="step-connector"></div>
+      <span class="step-dot" data-step="6"></span>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT AREA -->
+  <main class="qp-main">
+
+    <!-- STEP 1 — Location -->
+    <div class="qp-step" id="wizard-step-1">
+      <h2 class="qp-title">Select Your Location</h2>
+      <div class="qp-card-row">
+
+        <label class="qp-sel-card location-card" data-location="kearney">
+          <input type="radio" name="location" value="kearney">
+          <div class="qp-card-icon">
+            <svg viewBox="0 0 80 80" fill="none">
+              <path d="M40 8C26 8 14 20 14 34c0 20 26 46 26 46s26-26 26-46C66 20 54 8 40 8z" fill="currentColor" opacity="0.15"/>
+              <path d="M40 8C26 8 14 20 14 34c0 20 26 46 26 46s26-26 26-46C66 20 54 8 40 8z" stroke="currentColor" stroke-width="3" fill="none"/>
+              <circle cx="40" cy="34" r="8" fill="currentColor"/>
+            </svg>
+          </div>
+          <span class="qp-card-label">Kearney</span>
+          <span class="qp-card-sub">Kearney, NE</span>
+          <div class="qp-card-check">
+            <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </div>
+        </label>
+
+        <label class="qp-sel-card location-card" data-location="lincoln">
+          <input type="radio" name="location" value="lincoln">
+          <div class="qp-card-icon">
+            <svg viewBox="0 0 80 80" fill="none">
+              <path d="M40 8C26 8 14 20 14 34c0 20 26 46 26 46s26-26 26-46C66 20 54 8 40 8z" fill="currentColor" opacity="0.15"/>
+              <path d="M40 8C26 8 14 20 14 34c0 20 26 46 26 46s26-26 26-46C66 20 54 8 40 8z" stroke="currentColor" stroke-width="3" fill="none"/>
+              <circle cx="40" cy="34" r="8" fill="currentColor"/>
+            </svg>
+          </div>
+          <span class="qp-card-label">Lincoln</span>
+          <span class="qp-card-sub">Lincoln, NE</span>
+          <div class="qp-card-check">
+            <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </div>
+        </label>
+
+      </div>
+      <p class="qp-error" id="step1-error"></p>
+    </div>
+
+    <!-- STEP 2 — Contact -->
+    <div class="qp-step" id="wizard-step-2" hidden>
+      <h2 class="qp-title">About You</h2>
+      <div class="qp-form">
+        <div class="qp-form-row">
+          <div class="qp-form-group"><label>First Name <span class="req">*</span></label><input type="text" id="contact-first" placeholder="John" autocomplete="given-name"></div>
+          <div class="qp-form-group"><label>Last Name <span class="req">*</span></label><input type="text" id="contact-last" placeholder="Smith" autocomplete="family-name"></div>
+        </div>
+        <div class="qp-form-group"><label>Email Address <span class="req">*</span></label><input type="email" id="contact-email" placeholder="john@email.com" autocomplete="email"></div>
+        <div class="qp-form-group"><label>Phone Number <span class="req">*</span></label><input type="tel" id="contact-phone" placeholder="(402) 555-0123" autocomplete="tel"></div>
+      </div>
+      <p class="qp-error" id="step2-error"></p>
+    </div>
+
+    <!-- STEP 3 — Property Type -->
+    <div class="qp-step" id="wizard-step-3" hidden>
+      <h2 class="qp-title">Your Property</h2>
+      <div class="qp-card-row">
+
+        <label class="qp-sel-card property-card" data-property="residential">
+          <input type="radio" name="property-type" value="residential">
+          <div class="qp-card-icon">
+            <svg viewBox="0 0 80 80" fill="none">
+              <path d="M10 38L40 12l30 26v28a4 4 0 01-4 4H14a4 4 0 01-4-4V38z" fill="currentColor" opacity="0.15" stroke="currentColor" stroke-width="3"/>
+              <path d="M30 70V50h20v20" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <span class="qp-card-label">Residential</span>
+          <span class="qp-card-sub">Home, condo, townhouse</span>
+          <div class="qp-card-check">
+            <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </div>
+        </label>
+
+        <label class="qp-sel-card property-card" data-property="commercial">
+          <input type="radio" name="property-type" value="commercial">
+          <div class="qp-card-icon">
+            <svg viewBox="0 0 80 80" fill="none">
+              <rect x="8" y="28" width="64" height="44" rx="4" fill="currentColor" opacity="0.15" stroke="currentColor" stroke-width="3"/>
+              <path d="M52 28V20a8 8 0 00-8-8H36a8 8 0 00-8 8v8" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              <line x1="40" y1="44" x2="40" y2="56" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              <line x1="28" y1="44" x2="28" y2="56" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              <line x1="52" y1="44" x2="52" y2="56" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <span class="qp-card-label">Commercial</span>
+          <span class="qp-card-sub">Business, office, retail</span>
+          <div class="qp-card-check">
+            <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </div>
+        </label>
+
+      </div>
+      <p class="qp-error" id="step3-error"></p>
+    </div>
+
+    <!-- STEP 4 — Services -->
+    <div class="qp-step" id="wizard-step-4" hidden>
+      <h2 class="qp-title">Select Your Service</h2>
+      <p class="qp-subtitle">Pick the service you need a quote for</p>
+      <div class="qp-service-grid">
+
+        <!-- Row 1: Large featured window services -->
+        <label class="qp-svc-card qp-svc-card--large service-radio-card" data-service="exterior-windows">
+          <input type="radio" name="service" value="exterior-windows">
+          <div class="qp-svc-icon" style="color:#4baee6">
+            <svg viewBox="0 0 60 60" fill="none"><rect x="6" y="6" width="48" height="48" rx="5" stroke="currentColor" stroke-width="3" fill="currentColor" fill-opacity="0.1"/><line x1="30" y1="6" x2="30" y2="54" stroke="currentColor" stroke-width="3"/><line x1="6" y1="30" x2="54" y2="30" stroke="currentColor" stroke-width="3"/></svg>
+          </div>
+          <span class="qp-svc-name">Exterior Window Cleaning</span>
+          <div class="qp-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        </label>
+
+        <label class="qp-svc-card qp-svc-card--large service-radio-card" data-service="interior-windows">
+          <input type="radio" name="service" value="interior-windows">
+          <div class="qp-svc-icon" style="color:#34d1bf">
+            <svg viewBox="0 0 60 60" fill="none"><rect x="6" y="8" width="48" height="44" rx="5" stroke="currentColor" stroke-width="3" fill="currentColor" fill-opacity="0.1"/><line x1="30" y1="8" x2="30" y2="52" stroke="currentColor" stroke-width="3"/><line x1="6" y1="30" x2="54" y2="30" stroke="currentColor" stroke-width="3"/><path d="M18 18 Q22 14 26 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M34 18 Q38 14 42 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <span class="qp-svc-name">Interior Window Cleaning</span>
+          <div class="qp-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        </label>
+
+        <!-- Row 2: Core services -->
+        <label class="qp-svc-card service-radio-card" data-service="track-detailing">
+          <input type="radio" name="service" value="track-detailing">
+          <div class="qp-svc-icon" style="color:#f97316">
+            <svg viewBox="0 0 60 60" fill="none"><rect x="6" y="20" width="48" height="9" rx="3" stroke="currentColor" stroke-width="3" fill="currentColor" fill-opacity="0.15"/><rect x="6" y="33" width="48" height="9" rx="3" stroke="currentColor" stroke-width="3" fill="currentColor" fill-opacity="0.15"/><circle cx="16" cy="24" r="3" fill="currentColor"/><circle cx="30" cy="24" r="3" fill="currentColor"/><circle cx="44" cy="24" r="3" fill="currentColor"/><circle cx="16" cy="37" r="3" fill="currentColor"/><circle cx="30" cy="37" r="3" fill="currentColor"/><circle cx="44" cy="37" r="3" fill="currentColor"/></svg>
+          </div>
+          <span class="qp-svc-name">Track Detailing</span>
+          <div class="qp-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        </label>
+
+        <label class="qp-svc-card service-radio-card" data-service="gutters">
+          <input type="radio" name="service" value="gutters">
+          <div class="qp-svc-icon" style="color:#1a3a6e">
+            <svg viewBox="0 0 60 60" fill="none"><path d="M4 22 H56 V31 Q56 37 50 37 H10 Q4 37 4 31 V22Z" stroke="currentColor" stroke-width="3" fill="currentColor" fill-opacity="0.12"/><path d="M10 37 L8 52" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M50 37 L52 52" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M18 14 L21 22 M30 10 L30 22 M42 14 L39 22" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+          </div>
+          <span class="qp-svc-name">Gutter Cleaning</span>
+          <div class="qp-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        </label>
+
+        <label class="qp-svc-card service-radio-card" data-service="screen-cleaning">
+          <input type="radio" name="service" value="screen-cleaning">
+          <div class="qp-svc-icon" style="color:#8b5cf6">
+            <svg viewBox="0 0 60 60" fill="none"><rect x="8" y="8" width="44" height="44" rx="4" stroke="currentColor" stroke-width="3" fill="currentColor" fill-opacity="0.08"/><line x1="8" y1="19" x2="52" y2="19" stroke="currentColor" stroke-width="2"/><line x1="8" y1="30" x2="52" y2="30" stroke="currentColor" stroke-width="2"/><line x1="8" y1="41" x2="52" y2="41" stroke="currentColor" stroke-width="2"/><line x1="19" y1="8" x2="19" y2="52" stroke="currentColor" stroke-width="2"/><line x1="30" y1="8" x2="30" y2="52" stroke="currentColor" stroke-width="2"/><line x1="41" y1="8" x2="41" y2="52" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <span class="qp-svc-name">Screen Cleaning</span>
+          <div class="qp-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        </label>
+
+        <label class="qp-svc-card service-radio-card" data-service="pressure-washing">
+          <input type="radio" name="service" value="pressure-washing">
+          <div class="qp-svc-icon" style="color:#34a864">
+            <!-- Clean pressure washer wand + fan spray -->
+            <svg viewBox="0 0 60 60" fill="none"><line x1="12" y1="48" x2="38" y2="22" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><rect x="34" y="14" width="12" height="12" rx="3" stroke="currentColor" stroke-width="3" fill="currentColor" fill-opacity="0.15" transform="rotate(-45 40 20)"/><line x1="42" y1="14" x2="50" y2="6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="44" y1="18" x2="54" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="44" y1="12" x2="52" y2="4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="50" r="5" stroke="currentColor" stroke-width="3" fill="currentColor" fill-opacity="0.15"/></svg>
+          </div>
+          <span class="qp-svc-name">Pressure Washing</span>
+          <div class="qp-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        </label>
+
+        <!-- Row 3: Additional services -->
+        <label class="qp-svc-card service-radio-card" data-service="solar-panel">
+          <input type="radio" name="service" value="solar-panel">
+          <div class="qp-svc-icon" style="color:#f59e0b">
+            <svg viewBox="0 0 60 60" fill="none"><rect x="4" y="10" width="24" height="18" rx="3" stroke="currentColor" stroke-width="3" fill="currentColor" fill-opacity="0.15"/><rect x="32" y="10" width="24" height="18" rx="3" stroke="currentColor" stroke-width="3" fill="currentColor" fill-opacity="0.15"/><rect x="4" y="32" width="24" height="18" rx="3" stroke="currentColor" stroke-width="3" fill="currentColor" fill-opacity="0.15"/><rect x="32" y="32" width="24" height="18" rx="3" stroke="currentColor" stroke-width="3" fill="currentColor" fill-opacity="0.15"/><line x1="16" y1="50" x2="16" y2="56" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><line x1="44" y1="50" x2="44" y2="56" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><line x1="10" y1="56" x2="50" y2="56" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+          </div>
+          <span class="qp-svc-name">Solar Panel Cleaning</span>
+          <div class="qp-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        </label>
+
+        <label class="qp-svc-card service-radio-card" data-service="soft-washing">
+          <input type="radio" name="service" value="soft-washing">
+          <div class="qp-svc-icon" style="color:#06b6d4">
+            <!-- Person holding a soft-wash wand, gentle spray fan -->
+            <svg viewBox="0 0 60 60" fill="none"><circle cx="20" cy="10" r="6" stroke="currentColor" stroke-width="2.5" fill="currentColor" fill-opacity="0.12"/><line x1="20" y1="16" x2="20" y2="32" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><line x1="12" y1="22" x2="28" y2="22" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><line x1="20" y1="32" x2="14" y2="48" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><line x1="20" y1="32" x2="26" y2="48" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><line x1="28" y1="22" x2="48" y2="18" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M50 16 L56 10 M54 18 L60 14 M52 20 L58 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <span class="qp-svc-name">Soft Washing</span>
+          <div class="qp-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        </label>
+
+        <label class="qp-svc-card service-radio-card" data-service="christmas-lights">
+          <input type="radio" name="service" value="christmas-lights">
+          <div class="qp-svc-icon" style="color:#ef4444">
+            <svg viewBox="0 0 60 60" fill="none"><path d="M6 22 Q20 15 30 22 Q40 29 54 22" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none"/><circle cx="14" cy="30" r="5" stroke="currentColor" stroke-width="2.5" fill="currentColor" fill-opacity="0.2"/><line x1="14" y1="25" x2="14" y2="22" stroke="currentColor" stroke-width="2"/><circle cx="30" cy="32" r="5" stroke="currentColor" stroke-width="2.5" fill="currentColor" fill-opacity="0.2"/><line x1="30" y1="27" x2="30" y2="22" stroke="currentColor" stroke-width="2"/><circle cx="46" cy="30" r="5" stroke="currentColor" stroke-width="2.5" fill="currentColor" fill-opacity="0.2"/><line x1="46" y1="25" x2="46" y2="22" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <span class="qp-svc-name">Christmas Lights</span>
+          <div class="qp-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        </label>
+
+        <label class="qp-svc-card service-radio-card" data-service="commercial-cleaning">
+          <input type="radio" name="service" value="commercial-cleaning">
+          <div class="qp-svc-icon" style="color:#64748b">
+            <svg viewBox="0 0 60 60" fill="none"><rect x="8" y="18" width="44" height="36" rx="3" stroke="currentColor" stroke-width="3" fill="currentColor" fill-opacity="0.1"/><path d="M20 18 V12 Q20 8 24 8 H36 Q40 8 40 12 V18" stroke="currentColor" stroke-width="3"/><rect x="16" y="28" width="8" height="8" rx="1" stroke="currentColor" stroke-width="2" fill="currentColor" fill-opacity="0.2"/><rect x="30" y="28" width="8" height="8" rx="1" stroke="currentColor" stroke-width="2" fill="currentColor" fill-opacity="0.2"/><rect x="22" y="42" width="16" height="12" rx="2" stroke="currentColor" stroke-width="2" fill="currentColor" fill-opacity="0.15"/></svg>
+          </div>
+          <span class="qp-svc-name">Commercial Cleaning</span>
+          <div class="qp-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        </label>
+
+      </div>
+      <p class="qp-error" id="step4-error"></p>
+    </div>
+
+    <!-- STEP 5 — Plan -->
+    <div class="qp-step" id="wizard-step-5" hidden>
+      <h2 class="qp-title">Choose Your Plan</h2>
+      <p class="qp-subtitle">Pick what works best for you</p>
+      <div class="qp-plan-grid">
+
+        <label class="qp-plan-card plan-card" data-plan="monthly">
+          <input type="radio" name="plan" value="monthly">
+          <div class="qp-plan-badge">Most Frequent</div>
+          <div class="qp-plan-name">Monthly</div>
+          <div class="qp-plan-savings">$150 <span>OFF</span></div>
+          <div class="qp-plan-sub">per cleaning · 12 visits/yr</div>
+          <p class="qp-plan-desc">Always clean, always fresh — year-round coverage.</p>
+          <ul class="qp-plan-features">
+            <li class="feat-yes">FREE LEAF RainBlock Tech</li>
+            <li class="feat-yes">7 Day Rain Guarantee</li>
+            <li class="feat-yes">FREE Hard Water Removal</li>
+          </ul>
+          <div class="qp-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        </label>
+
+        <label class="qp-plan-card qp-plan-card--featured plan-card plan-card--featured" data-plan="quarterly">
+          <input type="radio" name="plan" value="quarterly">
+          <div class="qp-plan-badge">Most Popular</div>
+          <div class="qp-plan-name">Quarterly</div>
+          <div class="qp-plan-savings">$100 <span>OFF</span></div>
+          <div class="qp-plan-sub">per cleaning · 4 visits/yr</div>
+          <p class="qp-plan-desc">The perfect balance of value and care every season.</p>
+          <ul class="qp-plan-features">
+            <li class="feat-yes">FREE LEAF RainBlock Tech</li>
+            <li class="feat-yes">7 Day Rain Guarantee</li>
+            <li class="feat-yes">FREE Hard Water Removal</li>
+          </ul>
+          <div class="qp-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        </label>
+
+        <label class="qp-plan-card plan-card" data-plan="biannual">
+          <input type="radio" name="plan" value="biannual">
+          <div class="qp-plan-badge">Best Value</div>
+          <div class="qp-plan-name">Bi-Annual</div>
+          <div class="qp-plan-savings">$50 <span>OFF</span></div>
+          <div class="qp-plan-sub">per cleaning · 2 visits/yr</div>
+          <p class="qp-plan-desc">Spring &amp; Fall deep cleans — the full seasonal package.</p>
+          <ul class="qp-plan-features">
+            <li class="feat-no">LEAF RainBlock Tech</li>
+            <li class="feat-no">7 Day Rain Guarantee</li>
+            <li class="feat-no">Hard Water Removal</li>
+          </ul>
+          <div class="qp-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        </label>
+
+        <label class="qp-plan-card qp-plan-card--onetime plan-card plan-card--onetime" data-plan="one-time">
+          <input type="radio" name="plan" value="one-time">
+          <div class="qp-plan-name">One-Time</div>
+          <div class="qp-plan-sub">No membership — pay per visit</div>
+          <p class="qp-plan-desc">No commitment. Book when you need us.</p>
+          <div class="qp-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        </label>
+
+      </div>
+      <p class="qp-error" id="step5-error"></p>
+    </div>
+
+    <!-- STEP 6 — Address -->
+    <div class="qp-step" id="wizard-step-6" hidden>
+      <h2 class="qp-title">Property Address</h2>
+      <p class="qp-subtitle">Almost done — just where we're headed</p>
+      <div class="qp-form">
+        <div class="qp-form-group"><label>Street Address <span class="req">*</span></label><input type="text" id="prop-street" placeholder="123 Main St" autocomplete="address-line1"></div>
+        <div class="qp-form-row">
+          <div class="qp-form-group"><label>City <span class="req">*</span></label><input type="text" id="prop-city" placeholder="Kearney" autocomplete="address-level2"></div>
+          <div class="qp-form-group"><label>Zip Code <span class="req">*</span></label><input type="text" id="prop-zip" placeholder="68847" autocomplete="postal-code" maxlength="10"></div>
+        </div>
+        <div class="qp-form-group"><label>Special Notes <span class="optional">(optional)</span></label><textarea id="prop-notes" placeholder="Gate codes, access info, areas of concern…" rows="3"></textarea></div>
+      </div>
+      <p class="qp-error" id="step6-error"></p>
+    </div>
+
+    <!-- STEP 7 — Confirmation -->
+    <div class="qp-step qp-step--confirm" id="wizard-step-7" hidden>
+      <div class="qp-confirm-icon">
+        <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+      </div>
+      <h2 class="qp-title">You're All Set!</h2>
+      <p class="qp-subtitle">We've received your quote request and will get back to you as soon as possible — usually within a few hours. We can't wait to get to work for you!</p>
+      <div class="wizard-summary" id="wizard-summary"></div>
+      <p class="qp-jobber-note">Prefer to talk right now?</p>
+      <div class="qp-confirm-btns">
+        <a href="tel:4023090128" class="qp-btn-primary">📞 Call (402) 309-0128</a>
+      </div>
+    </div>
+
+    <!-- INLINE NAV — appears right below active step -->
+    <div class="qp-nav" id="qp-nav">
+      <button class="qp-back-btn" id="wizard-back" style="display:none;">← Back</button>
+      <button class="qp-next-btn" id="wizard-next">Next →</button>
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

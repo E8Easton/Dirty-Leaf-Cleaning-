@@ -44,6 +44,12 @@
           <a href="service-interior.html">Interior Window Cleaning</a>
           <a href="service-gutter.html">Gutter Cleaning</a>
           <a href="service-powerwash.html">Powerwashing</a>
+          <a href="service-screen.html">Screen Cleaning</a>
+          <a href="service-track.html">Track Detailing</a>
+          <a href="service-solar.html">Solar Panel Cleaning</a>
+          <a href="service-commercial.html">Commercial Cleaning</a>
+          <a href="service-christmas.html">Christmas Light Installation</a>
+          <a href="service-softwash.html">Soft Washing</a>
         </div>
       </div>
       <a href="#testimonials">Reviews</a>
@@ -66,9 +72,9 @@
     <a href="#services">Our Services</a>
     <a href="#testimonials">Reviews</a>
     <a href="#booking">Commercial Cleaning</a>
-    <button onclick="openQuoteWizard()" class="mobile-cta" style="background: var(--white); color: var(--leaf-navy); border: none; cursor: pointer; font-family: var(--font-heading); font-size: 1.2rem; font-weight: 700; padding: 16px 40px; border-radius: var(--radius-full);">
+    <a class="mobile-cta" href="quote.html">
       Get Free Quote
-    </button>
+    </a>
   </div>
 
 
@@ -77,13 +83,20 @@
        ======================================== -->
   <section class="hero" id="hero">
     <div class="hero-bg">
-      <img src="images/hero-bg.png" alt="Professional window cleaning service" loading="eager">
+      <img src="images/new-service-2.jpg" alt="Professional window cleaning service" loading="eager">
     </div>
 
     <div class="hero-particles"></div>
 
     <div class="hero-content">
       <div class="hero-badge">
+        <!-- Google "G" logo -->
+        <svg class="hero-google-logo" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+          <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+          <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+          <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+        </svg>
         <div class="hero-stars">
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -91,17 +104,17 @@
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         </div>
-        <span>5 Stars on Google</span>
+        <span>5.0 · Google Reviews</span>
       </div>
 
       <h1>Spotless Views.<br><span class="accent">Every Time.</span></h1>
 
       <p>Professional window cleaning, gutter cleaning & powerwashing in Kearney and Lincoln. Your home deserves the Leaf treatment.</p>
 
-      <button class="btn-primary" id="hero-cta" onclick="openQuoteWizard()">
+      <a class="btn-primary" href="quote.html">
         GET YOUR FREE QUOTE
         <svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-      </button>
+      </a>
     </div>
   </section>
 
@@ -119,34 +132,62 @@
       <div class="services-grid stagger-children reveal">
         <!-- 1: Exterior Window Cleaning (large) -->
         <a class="service-card service-card--large" href="service-exterior.html">
-          <img src="images/new-service-2.jpg" alt="Exterior Window Cleaning">
-          <div class="service-card-overlay">
-            <h3>Exterior Window Cleaning</h3>
-          </div>
+          <img src="images/service-exterior.jpg" alt="Exterior Window Cleaning">
+          <div class="service-card-overlay"><h3>Exterior Window Cleaning</h3></div>
         </a>
 
         <!-- 2: Interior Window Cleaning (large) -->
         <a class="service-card service-card--large" href="service-interior.html">
-          <img src="images/new-service-4.jpg" alt="Interior Window Cleaning">
-          <div class="service-card-overlay">
-            <h3>Interior Window Cleaning</h3>
-          </div>
+          <img src="images/service-interior.jpg" alt="Interior Window Cleaning">
+          <div class="service-card-overlay"><h3>Interior Window Cleaning</h3></div>
         </a>
 
         <!-- 3: Gutter Cleaning -->
         <a class="service-card" href="service-gutter.html">
-          <img src="images/new-service-3.jpg" alt="Gutter Cleaning">
-          <div class="service-card-overlay">
-            <h3>Gutter Cleaning</h3>
-          </div>
+          <img src="images/service-gutter.jpg" alt="Gutter Cleaning">
+          <div class="service-card-overlay"><h3>Gutter Cleaning</h3></div>
         </a>
 
         <!-- 4: Powerwashing -->
         <a class="service-card" href="service-powerwash.html">
-          <img src="images/new-service-1.jpg" alt="Powerwashing">
-          <div class="service-card-overlay">
-            <h3>Powerwashing</h3>
-          </div>
+          <img src="images/service-powerwash.jpg" alt="Powerwashing">
+          <div class="service-card-overlay"><h3>Powerwashing</h3></div>
+        </a>
+
+        <!-- 5: Screen Cleaning -->
+        <a class="service-card" href="service-screen.html">
+          <img src="images/new-service-4.jpg" alt="Screen Cleaning">
+          <div class="service-card-overlay"><h3>Screen Cleaning</h3></div>
+        </a>
+
+        <!-- 6: Track Detailing -->
+        <a class="service-card" href="service-track.html">
+          <img src="images/new-service-3.jpg" alt="Track Detailing">
+          <div class="service-card-overlay"><h3>Track Detailing</h3></div>
+        </a>
+
+        <!-- 7: Solar Panel Cleaning -->
+        <a class="service-card" href="service-solar.html">
+          <img src="images/why-us-home.jpg" alt="Solar Panel Cleaning">
+          <div class="service-card-overlay"><h3>Solar Panel Cleaning</h3></div>
+        </a>
+
+        <!-- 8: Commercial Cleaning -->
+        <a class="service-card" href="service-commercial.html">
+          <img src="images/new-service-2.jpg" alt="Commercial Cleaning">
+          <div class="service-card-overlay"><h3>Commercial Cleaning</h3></div>
+        </a>
+
+        <!-- 9: Christmas Light Installation -->
+        <a class="service-card" href="service-christmas.html">
+          <img src="images/hero-bg.png" alt="Christmas Light Installation">
+          <div class="service-card-overlay"><h3>Christmas Light Installation</h3></div>
+        </a>
+
+        <!-- 10: Soft Washing -->
+        <a class="service-card" href="service-softwash.html">
+          <img src="images/new-service-1.jpg" alt="Soft Washing">
+          <div class="service-card-overlay"><h3>Soft Washing</h3></div>
         </a>
       </div>
     </div>
@@ -154,13 +195,90 @@
 
 
   <!-- ========================================
+       PRICING / MAINTENANCE PLANS
+       ======================================== -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-title reveal">
+        <h2>SAVE BIG</h2>
+        <p class="subtitle">With Our Leaf Memberships — exclusive discounts on every clean</p>
+      </div>
+
+      <div class="pricing-grid stagger-children reveal">
+
+        <!-- Monthly -->
+        <div class="pricing-card">
+          <div class="pricing-plan-label">Monthly</div>
+          <div class="pricing-savings-block">
+            <div class="pricing-savings-amount">$150 <span>OFF</span></div>
+            <div class="pricing-savings-per">per cleaning</div>
+          </div>
+          <p class="pricing-desc">12 visits per year — always clean, always fresh.</p>
+          <ul class="pricing-features">
+            <li class="feat-yes">FREE LEAF RainBlock Tech</li>
+            <li class="feat-yes">7 Day Rain Guarantee</li>
+            <li class="feat-yes">FREE Hard Water Removal</li>
+          </ul>
+          <a class="pricing-cta" href="quote.html?plan=monthly">
+            Get Your Quote
+            <svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </div>
+
+        <!-- Quarterly — Featured -->
+        <div class="pricing-card featured">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-plan-label">Quarterly</div>
+          <div class="pricing-savings-block">
+            <div class="pricing-savings-amount">$100 <span>OFF</span></div>
+            <div class="pricing-savings-per">per cleaning</div>
+          </div>
+          <p class="pricing-desc">4 cleanings per year — the perfect balance of value and care.</p>
+          <ul class="pricing-features">
+            <li class="feat-yes">FREE LEAF RainBlock Tech</li>
+            <li class="feat-yes">7 Day Rain Guarantee</li>
+            <li class="feat-yes">FREE Hard Water Removal</li>
+          </ul>
+          <a class="pricing-cta" href="quote.html?plan=quarterly">
+            Get Your Quote
+            <svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </div>
+
+        <!-- Bi-Annual -->
+        <div class="pricing-card">
+          <div class="pricing-plan-label">Bi-Annual</div>
+          <div class="pricing-savings-block">
+            <div class="pricing-savings-amount">$50 <span>OFF</span></div>
+            <div class="pricing-savings-per">per cleaning</div>
+          </div>
+          <p class="pricing-desc">Spring & Fall deep cleans — the full seasonal package.</p>
+          <ul class="pricing-features">
+            <li class="feat-no">LEAF RainBlock Tech</li>
+            <li class="feat-no">7 Day Rain Guarantee</li>
+            <li class="feat-no">Hard Water Removal</li>
+          </ul>
+          <a class="pricing-cta" href="quote.html?plan=bi-annual">
+            Get Your Quote
+            <svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </a>
+        </div>
+
+      </div>
+
+      <p class="pricing-note reveal">All plans include our 100% satisfaction guarantee. Custom commercial pricing available — <a href="tel:4023090128">(402) 309-0128</a>.</p>
+    </div>
+  </section>
+
+
+  <!-- ========================================
        WHY CHOOSE US
        ======================================== -->
-  <section class="why-us" id="why-us">
+  <section class="why-us why-us--glow" id="why-us">
     <div class="container">
       <div class="why-us-grid">
         <div class="why-us-image reveal-left">
-          <img src="images/hero-squeegee.png" alt="Professional window cleaning squeegee detail">
+          <img src="images/new-service-4.jpg" alt="Professional window cleaning team">
           <div class="why-us-badge">100% Satisfaction Guaranteed</div>
         </div>
 
@@ -212,89 +330,12 @@
             </div>
           </div>
 
-          <button class="btn-primary" id="why-us-cta" onclick="openQuoteWizard()">
+          <a class="btn-primary" href="quote.html">
             Get Your Quote
             <svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-          </button>
+          </a>
         </div>
       </div>
-    </div>
-  </section>
-
-
-  <!-- ========================================
-       PRICING / MAINTENANCE PLANS
-       ======================================== -->
-  <section class="pricing-section" id="pricing">
-    <div class="container">
-      <div class="section-title reveal">
-        <h2>SAVE BIG</h2>
-        <p class="subtitle">With Our Leaf Memberships — exclusive discounts on every clean</p>
-      </div>
-
-      <div class="pricing-grid stagger-children reveal">
-
-        <!-- Monthly -->
-        <div class="pricing-card">
-          <div class="pricing-plan-label">Monthly</div>
-          <div class="pricing-savings-block">
-            <div class="pricing-savings-amount">$150 <span>OFF</span></div>
-            <div class="pricing-savings-per">per cleaning</div>
-          </div>
-          <p class="pricing-desc">12 visits per year — always clean, always fresh.</p>
-          <ul class="pricing-features">
-            <li class="feat-yes">FREE LEAF RainBlock Tech</li>
-            <li class="feat-yes">7 Day Rain Guarantee</li>
-            <li class="feat-yes">FREE Hard Water Removal</li>
-          </ul>
-          <button class="pricing-cta" onclick="openQuoteWizard(null, 'Monthly')">
-            Get Your Quote
-            <svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-          </button>
-        </div>
-
-        <!-- Quarterly — Featured -->
-        <div class="pricing-card featured">
-          <div class="pricing-badge">Most Popular</div>
-          <div class="pricing-plan-label">Quarterly</div>
-          <div class="pricing-savings-block">
-            <div class="pricing-savings-amount">$100 <span>OFF</span></div>
-            <div class="pricing-savings-per">per cleaning</div>
-          </div>
-          <p class="pricing-desc">4 cleanings per year — the perfect balance of value and care.</p>
-          <ul class="pricing-features">
-            <li class="feat-yes">FREE LEAF RainBlock Tech</li>
-            <li class="feat-yes">7 Day Rain Guarantee</li>
-            <li class="feat-yes">FREE Hard Water Removal</li>
-          </ul>
-          <button class="pricing-cta" onclick="openQuoteWizard(null, 'Quarterly')">
-            Get Your Quote
-            <svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-          </button>
-        </div>
-
-        <!-- Bi-Annual -->
-        <div class="pricing-card">
-          <div class="pricing-plan-label">Bi-Annual</div>
-          <div class="pricing-savings-block">
-            <div class="pricing-savings-amount">$50 <span>OFF</span></div>
-            <div class="pricing-savings-per">per cleaning</div>
-          </div>
-          <p class="pricing-desc">Spring & Fall deep cleans — the full seasonal package.</p>
-          <ul class="pricing-features">
-            <li class="feat-no">LEAF RainBlock Tech</li>
-            <li class="feat-no">7 Day Rain Guarantee</li>
-            <li class="feat-no">Hard Water Removal</li>
-          </ul>
-          <button class="pricing-cta" onclick="openQuoteWizard(null, 'Bi-Annual')">
-            Get Your Quote
-            <svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-          </button>
-        </div>
-
-      </div>
-
-      <p class="pricing-note reveal">All plans include our 100% satisfaction guarantee. Custom commercial pricing available — <a href="tel:4023090128">(402) 309-0128</a>.</p>
     </div>
   </section>
 
@@ -309,70 +350,51 @@
         <p class="subtitle">From quote to spotless — in 4 simple steps</p>
       </div>
 
-      <div class="process-steps reveal">
+      <div class="process-steps--image reveal">
 
-        <div class="process-step">
-          <div class="process-step-bubble">
-            <span class="process-step-num">1</span>
-            <div class="process-step-icon-wrap">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-            </div>
-          </div>
-          <div class="process-step-connector" aria-hidden="true"></div>
-          <div class="process-step-content">
-            <h3>Get Your Quote</h3>
-            <p>Fill out our quick 60-second form and tell us what you need. Free, no-obligation estimate every time.</p>
+        <div class="process-step--img">
+          <img src="images/new-service-4.jpg" alt="Step 1 — Scrub">
+          <div class="process-step--img-overlay">
+            <span class="process-step--img-num">1</span>
+            <div class="process-step--img-title">Scrub</div>
+            <div class="process-step--img-desc">We scrub every surface with eco-friendly solutions to lift dirt, pollen, and grime.</div>
           </div>
         </div>
 
-        <div class="process-step">
-          <div class="process-step-bubble">
-            <span class="process-step-num">2</span>
-            <div class="process-step-icon-wrap">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            </div>
-          </div>
-          <div class="process-step-connector" aria-hidden="true"></div>
-          <div class="process-step-content">
-            <h3>Schedule</h3>
-            <p>We reach out within 24 hours to confirm your appointment at a time that's convenient for you.</p>
+        <div class="process-step--img">
+          <img src="images/hero-squeegee.png" alt="Step 2 — Squeegee">
+          <div class="process-step--img-overlay">
+            <span class="process-step--img-num">2</span>
+            <div class="process-step--img-title">Squeegee</div>
+            <div class="process-step--img-desc">Industry-grade squeegees remove all residue for a perfectly streak-free finish.</div>
           </div>
         </div>
 
-        <div class="process-step">
-          <div class="process-step-bubble">
-            <span class="process-step-num">3</span>
-            <div class="process-step-icon-wrap">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-          </div>
-          <div class="process-step-connector" aria-hidden="true"></div>
-          <div class="process-step-content">
-            <h3>We Clean</h3>
-            <p>Our insured, trained team arrives on time with professional equipment and leaves your property spotless.</p>
+        <div class="process-step--img">
+          <img src="images/new-service-2.jpg" alt="Step 3 — Detail">
+          <div class="process-step--img-overlay">
+            <span class="process-step--img-num">3</span>
+            <div class="process-step--img-title">Detail</div>
+            <div class="process-step--img-desc">We hand-detail every edge, frame, and sill so no spot is missed.</div>
           </div>
         </div>
 
-        <div class="process-step">
-          <div class="process-step-bubble">
-            <span class="process-step-num">4</span>
-            <div class="process-step-icon-wrap">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            </div>
-          </div>
-          <div class="process-step-content">
-            <h3>Enjoy the View</h3>
-            <p>Sit back, relax, and admire crystal-clear windows and a cleaner home — backed by our 100% guarantee.</p>
+        <div class="process-step--img">
+          <img src="images/new-service-1.jpg" alt="Step 4 — LEAF RainBlock">
+          <div class="process-step--img-overlay">
+            <span class="process-step--img-num">4</span>
+            <div class="process-step--img-title">LEAF RainBlock</div>
+            <div class="process-step--img-desc">Our exclusive hydrophobic coating repels rain and keeps windows cleaner, longer.</div>
           </div>
         </div>
 
       </div>
 
       <div class="process-cta reveal">
-        <button class="btn-primary" onclick="openQuoteWizard()">
+        <a class="btn-primary" href="quote.html">
           Get Your Quote
           <svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-        </button>
+        </a>
       </div>
 
     </div>
@@ -532,10 +554,10 @@
         <h2>Ready for a Cleaner Home?</h2>
         <p>Get your free estimate in under 60 seconds — no commitment required.</p>
 
-        <button class="btn-dark" id="cta-book-now" onclick="openQuoteWizard()">
+        <a class="btn-dark" href="quote.html">
           GET YOUR QUOTE
           <svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-        </button>
+        </a>
 
         <div class="cta-phone">
           <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
@@ -624,10 +646,10 @@
           <span>Kearney, NE · Google Review</span>
         </div>
       </div>
-      <button class="btn-light" onclick="openQuoteWizard()">
+      <a class="btn-light" href="quote.html">
         Get Your Free Quote
         <svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-      </button>
+      </a>
     </div>
   </section>
 
@@ -657,10 +679,16 @@
         <div class="footer-column">
           <h4>Services</h4>
           <ul>
-            <li><a href="#services">Exterior Window Cleaning</a></li>
-            <li><a href="#services">Interior Window Cleaning</a></li>
-            <li><a href="#services">Gutter Cleaning</a></li>
-            <li><a href="#services">Powerwashing</a></li>
+            <li><a href="service-exterior.html">Exterior Window Cleaning</a></li>
+            <li><a href="service-interior.html">Interior Window Cleaning</a></li>
+            <li><a href="service-gutter.html">Gutter Cleaning</a></li>
+            <li><a href="service-powerwash.html">Powerwashing</a></li>
+            <li><a href="service-screen.html">Screen Cleaning</a></li>
+            <li><a href="service-track.html">Track Detailing</a></li>
+            <li><a href="service-solar.html">Solar Panel Cleaning</a></li>
+            <li><a href="service-commercial.html">Commercial Cleaning</a></li>
+            <li><a href="service-christmas.html">Christmas Light Installation</a></li>
+            <li><a href="service-softwash.html">Soft Washing</a></li>
           </ul>
         </div>
 
@@ -670,7 +698,7 @@
             <li><a href="#hero">Home</a></li>
             <li><a href="#why-us">About Us</a></li>
             <li><a href="#testimonials">Reviews</a></li>
-            <li><a href="javascript:void(0)" onclick="openQuoteWizard()">Get a Quote</a></li>
+            <li><a href="javascript:void(0)" href="quote.html">Get a Quote</a></li>
           </ul>
         </div>
 
