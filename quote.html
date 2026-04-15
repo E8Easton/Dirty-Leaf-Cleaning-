@@ -88,6 +88,28 @@
         </div>
         <div class="qp-form-group"><label>Email Address <span class="req">*</span></label><input type="email" id="contact-email" placeholder="john@email.com" autocomplete="email"></div>
         <div class="qp-form-group"><label>Phone Number <span class="req">*</span></label><input type="tel" id="contact-phone" placeholder="(402) 555-0123" autocomplete="tel"></div>
+
+        <!-- SMS Consent -->
+        <div class="qp-sms-consents">
+          <label class="qp-consent-row">
+            <input type="checkbox" id="consent-support" checked>
+            <span class="qp-consent-check"></span>
+            <span class="qp-consent-text">I agree to receive customer support and informational SMS alerts from Leaf Cleaning.</span>
+          </label>
+          <label class="qp-consent-row">
+            <input type="checkbox" id="consent-marketing" checked>
+            <span class="qp-consent-check"></span>
+            <span class="qp-consent-text">I agree to receive marketing and promotional SMS alerts from Leaf Cleaning.</span>
+          </label>
+          <label class="qp-consent-row">
+            <input type="checkbox" id="consent-terms" checked>
+            <span class="qp-consent-check"></span>
+            <span class="qp-consent-text">I agree to the <a href="#" class="qp-consent-link">Privacy Policy</a> &amp; <a href="#" class="qp-consent-link">Terms and Conditions</a>.</span>
+          </label>
+          <p class="qp-consent-fine-print">
+            Consent is not a condition of purchase. Msg &amp; data rates may apply. Msg frequency varies. Unsubscribe at any time by replying STOP. Reply HELP to (402) 309-0128 for assistance. By checking the boxes above, you consent to receive SMS messages from Leaf Cleaning as described. See our <a href="#" class="qp-consent-link">Privacy Policy</a> and <a href="#" class="qp-consent-link">Terms &amp; Conditions</a> for full details.
+          </p>
+        </div>
       </div>
       <p class="qp-error" id="step2-error"></p>
     </div>
@@ -160,6 +182,9 @@
         </div>
 
         <!-- Smaller service cards -->
+
+        <!-- TRACK DETAILING: Add-on only, not a primary service — re-enable here if needed -->
+        <!--
         <div class="qp-img-svc-card service-radio-card" data-service="track-detailing">
           <div class="qp-img-svc-bg" style="background-image:url('images/svc-track.jpg')"></div>
           <div class="qp-img-svc-overlay"></div>
@@ -168,6 +193,7 @@
             <div class="qp-img-svc-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
           </div>
         </div>
+        -->
 
         <div class="qp-img-svc-card service-radio-card" data-service="gutters">
           <div class="qp-img-svc-bg" style="background-image:url('images/svc-gutter.jpg')"></div>
@@ -191,7 +217,7 @@
           <div class="qp-img-svc-bg" style="background-image:url('images/svc-powerwash.jpg')"></div>
           <div class="qp-img-svc-overlay"></div>
           <div class="qp-img-svc-content">
-            <span class="qp-img-svc-name">Pressure Washing</span>
+            <span class="qp-img-svc-name">Pressure Washing / Soft Washing</span>
             <div class="qp-img-svc-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
           </div>
         </div>
@@ -205,15 +231,8 @@
           </div>
         </div>
 
-        <div class="qp-img-svc-card service-radio-card" data-service="soft-washing">
-          <div class="qp-img-svc-bg" style="background-image:url('images/svc-softwash.jpg')"></div>
-          <div class="qp-img-svc-overlay"></div>
-          <div class="qp-img-svc-content">
-            <span class="qp-img-svc-name">Soft Washing</span>
-            <div class="qp-img-svc-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-          </div>
-        </div>
-
+        <!-- CHRISTMAS LIGHTS: Re-enable for holiday season -->
+        <!--
         <div class="qp-img-svc-card service-radio-card" data-service="christmas-lights">
           <div class="qp-img-svc-bg" style="background-image:url('images/svc-christmas.jpg')"></div>
           <div class="qp-img-svc-overlay"></div>
@@ -222,7 +241,10 @@
             <div class="qp-img-svc-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
           </div>
         </div>
+        -->
 
+        <!-- COMMERCIAL CLEANING: Re-enable for winter season — customers must contact us directly -->
+        <!--
         <div class="qp-img-svc-card service-radio-card" data-service="commercial-cleaning">
           <div class="qp-img-svc-bg" style="background-image:url('images/svc-commercial.jpg')"></div>
           <div class="qp-img-svc-overlay"></div>
@@ -231,6 +253,7 @@
             <div class="qp-img-svc-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
           </div>
         </div>
+        -->
 
       </div>
 
@@ -295,6 +318,8 @@
           <div class="qp-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
         </label>
 
+        <!-- ONE-TIME PLAN: Removed — customers call for one-time quotes (402-309-0128) -->
+        <!--
         <label class="qp-plan-card qp-plan-card--onetime plan-card plan-card--onetime" data-plan="one-time">
           <input type="radio" name="plan" value="one-time">
           <div class="qp-plan-name">One-Time</div>
@@ -302,8 +327,10 @@
           <p class="qp-plan-desc">No commitment. Book when you need us.</p>
           <div class="qp-card-check"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
         </label>
+        -->
 
       </div>
+      <p class="qp-plan-onetime-note">Need a one-time clean? Give us a call at <a href="tel:4023090128">402-309-0128</a> and we'll get you a custom quote.</p>
       <p class="qp-error" id="step5-error"></p>
     </div>
 
@@ -314,7 +341,7 @@
       <div class="qp-form">
         <div class="qp-form-group"><label>Street Address <span class="req">*</span></label><input type="text" id="prop-street" placeholder="123 Main St" autocomplete="address-line1"></div>
         <div class="qp-form-row">
-          <div class="qp-form-group"><label>City <span class="req">*</span></label><input type="text" id="prop-city" placeholder="Kearney" autocomplete="address-level2"></div>
+          <div class="qp-form-group"><label>City <span class="req">*</span></label><input type="text" id="prop-city" placeholder="Kearney" autocomplete="address-level2" class="autofilled-field"></div>
           <div class="qp-form-group"><label>Zip Code <span class="req">*</span></label><input type="text" id="prop-zip" placeholder="68847" autocomplete="postal-code" maxlength="10"></div>
         </div>
         <div class="qp-form-group"><label>Special Notes <span class="optional">(optional)</span></label><textarea id="prop-notes" placeholder="Gate codes, access info, areas of concern…" rows="3"></textarea></div>

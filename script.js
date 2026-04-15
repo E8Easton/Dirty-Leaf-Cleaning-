@@ -356,7 +356,7 @@ const SVC_INFO = {
   'track-detailing':    { img: 'images/svc-track.jpg',      name: 'Track Detailing' },
   'gutters':            { img: 'images/svc-gutter.jpg',     name: 'Gutter Cleaning' },
   'screen-cleaning':    { img: 'images/svc-screen.jpg',     name: 'Screen Cleaning' },
-  'pressure-washing':   { img: 'images/svc-powerwash.jpg',  name: 'Pressure Washing' },
+  'pressure-washing':   { img: 'images/svc-powerwash.jpg',  name: 'Pressure Washing / Soft Washing' },
   'solar-panel':        { img: 'images/svc-solar.jpg',      name: 'Solar Panel Cleaning' },
   'soft-washing':       { img: 'images/svc-softwash.jpg',   name: 'Soft Washing' },
   'christmas-lights':   { img: 'images/svc-christmas.jpg',  name: 'Christmas Lights' },
@@ -512,6 +512,15 @@ function handleNext() {
 
 function handleBack() {
   const { currentStep } = wizardState;
+
+  // On step 4: if a service is already selected (grid in selected state),
+  // Back should reset the grid so the user can re-pick — not leave the step.
+  if (currentStep === 4 && document.querySelector('#svc-img-grid.service-selected')) {
+    resetServiceGrid();
+    window.scrollTo({ top: document.getElementById('wizard-step-4')?.offsetTop - 80 || 0, behavior: 'smooth' });
+    return;
+  }
+
   if (currentStep > 1) {
     renderStep(currentStep - 1);
   }
@@ -538,9 +547,31 @@ function renderStep(step) {
     resetServiceGrid();
   }
 
+  // When entering step 4, auto-select if a service was passed via URL param
+  if (step === 4 && wizardState.preselectedService) {
+    const preCard = document.querySelector(`#svc-img-grid [data-service="${wizardState.preselectedService}"]`);
+    if (preCard && !preCard.classList.contains('selected')) {
+      // Small delay so the step is fully visible before the animation runs
+      setTimeout(() => triggerServiceSelect(preCard), 120);
+    }
+    // Only auto-trigger once
+    wizardState.preselectedService = null;
+  }
+
   // When entering step 5, inject selected services summary above the plan cards
   if (step === 5) {
     injectPlanServiceSummary();
+  }
+
+  // When entering step 6 (address), auto-fill city from location selection
+  if (step === 6) {
+    const locationCard = document.querySelector('.location-card.selected');
+    if (locationCard) {
+      const cityField = document.getElementById('prop-city');
+      if (cityField) {
+        cityField.value = locationCard.dataset.location === 'kearney' ? 'Kearney' : 'Lincoln';
+      }
+    }
   }
 
   // Update step label
@@ -628,6 +659,13 @@ function validateStep(step) {
     if (!phone.value.trim()) {
       showError('step2-error', 'Please enter your phone number.');
       phone.focus();
+      return false;
+    }
+    const consentSupport  = document.getElementById('consent-support');
+    const consentMarketing = document.getElementById('consent-marketing');
+    const consentTerms    = document.getElementById('consent-terms');
+    if (!consentSupport?.checked || !consentMarketing?.checked || !consentTerms?.checked) {
+      showError('step2-error', 'Please agree to all consent boxes to continue.');
       return false;
     }
     return true;
@@ -745,7 +783,6 @@ function buildConfirmationSummary() {
 function initPageWizard() {
   // Only runs on quote.html (body.qp, no #wizard-overlay)
   if (!document.body.classList.contains('qp')) return;
-  const pageWizard = document.body;
 
   // Mark wizard state as page mode so renderStep skips modal logic
   wizardState.pageMode = true;
@@ -781,22 +818,8 @@ function initPageWizard() {
   const preService = params.get('service');
   const prePlan    = params.get('plan');
 
-  if (preService) {
-    const card = pageWizard.querySelector(`[data-service="${preService}"]`);
-    if (card) {
-      card.classList.add('selected');
-      const cb = card.querySelector('input');
-      if (cb) cb.checked = true;
-    }
-  }
-  if (prePlan) {
-    const card = pageWizard.querySelector(`[data-plan="${prePlan.toLowerCase()}"]`);
-    if (card) {
-      card.classList.add('selected');
-      const rb = card.querySelector('input');
-      if (rb) rb.checked = true;
-    }
-  }
+  if (preService) wizardState.preselectedService = preService;
+  if (prePlan)    wizardState.preselectedPlan    = prePlan.toLowerCase();
 
   // Start at step 1
   renderStep(1);
@@ -834,11 +857,14 @@ function triggerServiceSelect(card) {
     // Inject "Change service" button into selected card
     if (!card.querySelector('.qp-svc-change-btn')) {
       const changeBtn = document.createElement('button');
+      changeBtn.type = 'button';
       changeBtn.className = 'qp-svc-change-btn';
       changeBtn.textContent = '✕ Change';
       changeBtn.addEventListener('click', (e) => {
+        e.preventDefault();
         e.stopPropagation();
         resetServiceGrid();
+        window.scrollTo({ top: document.getElementById('wizard-step-4')?.offsetTop - 80 || 0, behavior: 'smooth' });
       });
       card.appendChild(changeBtn);
     }
@@ -1177,6 +1203,7 @@ function collectQuoteData() {
     // Full formatted message (use {{message}} in EmailJS template)
     message,
     // Meta
+    subject:          '🌿 New Quote Request',
     submitted_at:     submittedAt,
     to_email:         LEAF_NOTIFY.owner_email,
     reply_to:         email,
