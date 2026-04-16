@@ -351,16 +351,16 @@ const SVC_ADDONS = {
 
 // Image + display name map for all services
 const SVC_INFO = {
-  'exterior-windows':   { img: 'images/svc-exterior.jpg',   name: 'Exterior Window Cleaning' },
-  'interior-windows':   { img: 'images/svc-interior.jpg',   name: 'Interior Window Cleaning' },
-  'track-detailing':    { img: 'images/svc-track.jpg',      name: 'Track Detailing' },
-  'gutters':            { img: 'images/svc-gutter.jpg',     name: 'Gutter Cleaning' },
-  'screen-cleaning':    { img: 'images/svc-screen.jpg',     name: 'Screen Cleaning' },
-  'pressure-washing':   { img: 'images/svc-powerwash.jpg',  name: 'Pressure Washing / Soft Washing' },
-  'solar-panel':        { img: 'images/svc-solar.jpg',      name: 'Solar Panel Cleaning' },
-  'soft-washing':       { img: 'images/svc-softwash.jpg',   name: 'Soft Washing' },
-  'christmas-lights':   { img: 'images/svc-christmas.jpg',  name: 'Christmas Lights' },
-  'commercial-cleaning':{ img: 'images/svc-commercial.jpg', name: 'Commercial Cleaning' },
+  'exterior-windows':   { img: 'images/svc-exterior.jpg',   name: 'Exterior Window Cleaning',        desc: 'Streak-free glass on every exterior pane' },
+  'interior-windows':   { img: 'images/svc-interior.jpg',   name: 'Interior Window Cleaning',        desc: 'Crystal-clear inside views, safely done' },
+  'track-detailing':    { img: 'images/svc-track.jpg',      name: 'Track Detailing',                 desc: 'Deep-cleaned tracks, sills & frames' },
+  'gutters':            { img: 'images/svc-gutter.jpg',     name: 'Gutter Cleaning',                 desc: 'Free-flowing gutters, no clogs or damage' },
+  'screen-cleaning':    { img: 'images/svc-screen.jpg',     name: 'Screen Cleaning',                 desc: 'Dust & grime removed from every screen' },
+  'pressure-washing':   { img: 'images/svc-powerwash.jpg',  name: 'Pressure Washing / Soft Washing', desc: 'Blast away dirt, mold & stains from surfaces' },
+  'solar-panel':        { img: 'images/svc-solar.jpg',      name: 'Solar Panel Cleaning',            desc: 'Max energy output — panels cleaned right' },
+  'soft-washing':       { img: 'images/svc-softwash.jpg',   name: 'Soft Washing',                   desc: 'Gentle low-pressure clean for siding & roofs' },
+  'christmas-lights':   { img: 'images/svc-christmas.jpg',  name: 'Christmas Lights',               desc: 'Pro install, takedown & storage included' },
+  'commercial-cleaning':{ img: 'images/svc-commercial.jpg', name: 'Commercial Cleaning',            desc: 'High-rise, storefront & office specialists' },
 };
 
 function initQuoteWizard() {
@@ -378,6 +378,10 @@ function initQuoteWizard() {
       card.classList.add('selected');
       const rb = card.querySelector('input[type="radio"]');
       if (rb) rb.checked = true;
+      // Apply location theme
+      const loc = card.dataset.location;
+      document.body.classList.remove('theme-kearney', 'theme-lincoln');
+      if (loc) document.body.classList.add(`theme-${loc}`);
     });
   });
 
@@ -801,6 +805,13 @@ function initPageWizard() {
         card.classList.add('selected');
         const rb = card.querySelector('input[type="radio"]');
         if (rb) rb.checked = true;
+
+        // Apply location theme when location is chosen
+        if (sel === '.location-card') {
+          const loc = card.dataset.location;
+          document.body.classList.remove('theme-kearney', 'theme-lincoln');
+          if (loc) document.body.classList.add(`theme-${loc}`);
+        }
       });
     });
   });
@@ -929,7 +940,10 @@ function showAddOns(serviceId) {
       <div class="qp-addon-bg" style="background-image:url('${info.img}')"></div>
       <div class="qp-addon-overlay"></div>
       <div class="qp-addon-content">
-        <span class="qp-addon-name">${info.name}</span>
+        <div class="qp-addon-text">
+          <span class="qp-addon-name">${info.name}</span>
+          ${info.desc ? `<span class="qp-addon-desc">${info.desc}</span>` : ''}
+        </div>
         <div class="qp-addon-check">${checkSvg}</div>
       </div>`;
 
