@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initQuoteWizard();
   initPageWizard();
   initFAQ();
+  enhanceShareReview();
 });
 
 
@@ -886,8 +887,8 @@ function triggerServiceSelect(card) {
     setTimeout(() => {
       const nav = document.getElementById('qp-nav');
       if (nav) nav.scrollIntoView({ behavior: 'smooth', block: 'end' });
-    }, 380); // slight delay so add-ons have finished sliding in
-  }, 280);
+    }, 480); // slight delay so add-ons have finished sliding in
+  }, 450); // match .svc-fade-out transition duration (0.42s)
 }
 
 /**
@@ -990,6 +991,34 @@ function injectPlanServiceSummary() {
   div.innerHTML = `<strong>Your selection:</strong> ${allLines.join(' + ')}`;
   step5.insertBefore(div, step5.querySelector('.qp-plan-grid'));
 }
+
+/* ==========================================================
+   SHARE REVIEW SECTION — Enhance with stars + headline
+   ========================================================== */
+
+function enhanceShareReview() {
+  document.querySelectorAll('.share-review-wrap').forEach(wrap => {
+    // Inject star row at the top
+    const starsRow = document.createElement('div');
+    starsRow.className = 'share-review-stars';
+    const starSVG = `<svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`;
+    starsRow.innerHTML = starSVG.repeat(5);
+    wrap.insertBefore(starsRow, wrap.firstChild);
+
+    // Inject headline
+    const headline = document.createElement('p');
+    headline.className = 'share-review-headline';
+    headline.textContent = 'Loving the results?';
+    wrap.insertBefore(headline, wrap.querySelector('p:not(.share-review-headline)'));
+
+    // Remove emoji from button text (leaves clean label)
+    const btn = wrap.querySelector('.share-review-btn');
+    if (btn) {
+      btn.textContent = btn.textContent.replace(/⭐\s*/g, '').trim();
+    }
+  });
+}
+
 
 /* ==========================================================
    ADMIN TEST MODE — type "leafcleaning18" anywhere
