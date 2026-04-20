@@ -579,7 +579,7 @@ ul {
   align-items: center;
   gap: 10px;
   background: var(--leaf-green);
-  color: var(--leaf-navy);
+  color: #fff;
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 1rem;
@@ -602,7 +602,7 @@ ul {
 .btn-primary svg {
   width: 18px;
   height: 18px;
-  fill: var(--leaf-navy);
+  fill: #fff;
   transition: transform var(--transition-fast);
 }
 
