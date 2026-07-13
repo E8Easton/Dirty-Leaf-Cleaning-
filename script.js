@@ -1,5 +1,5 @@
 /* ==========================================================
-   LEAF CLEANING — Interactions & Animations
+   SHARK EXTERIORS — Interactions & Animations
    ========================================================== */
 
 /* ----------------------------------------------------------
@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initPageWizard();
   initFAQ();
   enhanceShareReview();
+  initFaqPopIn();
 });
 
 
@@ -360,7 +361,7 @@ const SVC_INFO = {
   'pressure-washing':   { img: 'images/svc-powerwash.jpg',  name: 'Pressure Washing / Soft Washing', desc: 'Blast away dirt, mold & stains from surfaces' },
   'solar-panel':        { img: 'images/svc-solar.jpg',      name: 'Solar Panel Cleaning',            desc: 'Max energy output — panels cleaned right' },
   'soft-washing':       { img: 'images/svc-softwash.jpg',   name: 'Soft Washing',                   desc: 'Gentle low-pressure clean for siding & roofs' },
-  'christmas-lights':   { img: 'images/svc-christmas.jpg',  name: 'Christmas Lights',               desc: 'Pro install, takedown & storage included' },
+  'christmas-lights':   { img: 'images/svc-christmas.jpg',  name: 'House Lighting Installation',    desc: 'Pro install, takedown & storage included' },
   'commercial-cleaning':{ img: 'images/svc-commercial.jpg', name: 'Commercial Cleaning',            desc: 'High-rise, storefront & office specialists' },
 };
 
@@ -1019,6 +1020,30 @@ function enhanceShareReview() {
   });
 }
 
+/* ---------------------------------------------------
+   FAQ — pop-in on scroll (blue/orange numbers via CSS)
+   --------------------------------------------------- */
+function initFaqPopIn() {
+  const items = document.querySelectorAll('.faq-list--open .faq-item');
+  if (!items.length) return;
+
+  if (!('IntersectionObserver' in window)) {
+    items.forEach((item) => item.classList.add('is-visible'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2, rootMargin: '0px 0px -40px 0px' });
+
+  items.forEach((item) => observer.observe(item));
+}
+
 
 /* ==========================================================
    ADMIN TEST MODE — type "leafcleaning18" anywhere
@@ -1134,7 +1159,7 @@ function activateTestMode() {
   };
   document.body.appendChild(submitBtn);
 
-  console.info('[Leaf Admin] Test mode active — fields pre-filled, click the yellow button to submit.');
+  console.info('[Shark Admin] Test mode active — fields pre-filled, click the yellow button to submit.');
 }
 
 
@@ -1153,7 +1178,7 @@ function loadEmailJS(callback) {
     emailjs.init(LEAF_NOTIFY.public_key);
     callback();
   };
-  s.onerror = () => console.warn('[Leaf] Failed to load EmailJS SDK');
+  s.onerror = () => console.warn('[Shark] Failed to load EmailJS SDK');
   document.head.appendChild(s);
 }
 
@@ -1256,7 +1281,7 @@ function collectQuoteData() {
 function submitQuoteNotification() {
   // Skip if EmailJS hasn't been configured yet
   if (!LEAF_NOTIFY.public_key || LEAF_NOTIFY.public_key === 'YOUR_EMAILJS_PUBLIC_KEY') {
-    console.info('[Leaf] EmailJS not configured — skipping notification');
+    console.info('[Shark] EmailJS not configured — skipping notification');
     return;
   }
 
@@ -1265,8 +1290,8 @@ function submitQuoteNotification() {
   loadEmailJS(() => {
     // ── Owner email (single send — all data in {{message}}) ──
     emailjs.send(LEAF_NOTIFY.service_id, LEAF_NOTIFY.template_id, data)
-      .then(() => console.info('[Leaf] Owner email sent ✓'))
-      .catch(err => console.warn('[Leaf] Owner email failed:', err));
+      .then(() => console.info('[Shark] Owner email sent ✓'))
+      .catch(err => console.warn('[Shark] Owner email failed:', err));
   });
 }
 
@@ -1290,7 +1315,7 @@ function submitQuoteNotification() {
    → Paste this into the Body (HTML or text):
 
    ─────────────────────────────────────────
-   NEW QUOTE REQUEST — Leaf Cleaning
+   NEW QUOTE REQUEST — Shark Exteriors
    Submitted: {{submitted_at}}
 
    CUSTOMER
@@ -1337,9 +1362,9 @@ function submitQuoteNotification() {
    STEP 6 — Gmail auto-label (one-time, 2 minutes)
    → In Gmail → Settings (gear) → See all settings
    → Filters and Blocked Addresses → Create a new filter
-   → In "Subject" box type:  New Quote Request — Leaf Cleaning
+   → In "Subject" box type:  New Quote Request — Shark Exteriors
    → Click "Create filter"
-   → Check "Apply the label" → New label → name it "Leaf Quotes"
+   → Check "Apply the label" → New label → name it "Shark Quotes"
    → Check "Also apply filter to matching conversations"
    → Click "Create filter"
    → Every new booking email will auto-land in that label!
